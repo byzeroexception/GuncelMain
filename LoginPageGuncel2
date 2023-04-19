@@ -49,14 +49,13 @@ public static JButton SUBMİT = new JButton();
 
 static void timeOut() {
 	try {
-		Thread.sleep(3000);
+		Thread.sleep(100);
 	} catch (InterruptedException e) {
 	
 	}{
 		
 	}
 }
-
 
 
 /*************************************************************
@@ -169,7 +168,7 @@ static void testIt() {
 	String CusNum = LNAME1.getText();
 	String Pass   = LPASS1.getText();
 	if(CusNum.equals("7523") && Pass.equals("1024")) {
-		System.err.println("Sistemden Cikildi : Giris Basarili");
+		
 	
 		/**********************************************
 		 *              Setting for testIt            *
@@ -178,6 +177,7 @@ static void testIt() {
 		 **********************************************/
 		LOGİNMENU.dispose();
 	current_sessionMenu();
+	
 	}
 	else if(CusNum.equals("") || Pass.equals("")) {
 		JOptionPane.showMessageDialog(null,"Müşteri Numarası ve Şifre alanı boş bırakılamaz","[Sistem][PARABANK]",JOptionPane.YES_OPTION);
@@ -244,7 +244,7 @@ LoginPage.add(welcomPanel);
 
 
 /*****************************************************************
- *  EN  		    INFO / BİLGİLENDİRME             TR  *
+ * 	EN  			       INFO / BİLGİLENDİRME              TR  *
  * ------------------------------------------------------------- *
  *               PAGE2 SystemUI / Sayfa2 SistemArayüzü           *
  * ------------------------------------------------------------- *
@@ -269,6 +269,7 @@ public static JFrame current_sessionMenu = new JFrame();
 public static JButton current_sessionCheckOut = new JButton();
 
 static void current_sessionMenu() {
+	current_sessionMenu.setTitle("SessionPage/OturumSayfası");
 	current_sessionMenu.setLayout(null);
 	current_sessionMenu.getContentPane().setBackground(Color.DARK_GRAY);
 	current_sessionMenu.setSize(500,300);
@@ -284,10 +285,19 @@ static void current_sessionCheckOut() {
 	current_sessionCheckOut.setForeground(new Color(232,232,232));
 	current_sessionCheckOut.setBorder(null);
 }
+static void current_sessionCheckOutLis() {
+	current_sessionCheckOut.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent i33) {
+			timeOut();
+			current_sessionMenu.dispose();
+			LoginMenu();
+		}
+	});
+}
 static void addBlok_current_session() {
 		current_sessionCheckOut();
 			current_sessionMenu.add(current_sessionCheckOut);
-	
+				current_sessionCheckOutLis();
 }
 
 
