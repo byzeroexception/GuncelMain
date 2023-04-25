@@ -1,5 +1,3 @@
-package help;
-
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
@@ -320,8 +318,12 @@ public static JPanel current_sessionIdCustomerUI = new JPanel();
 	
 	public static JPanel f = new JPanel();
 	
+
+	public static String cek ;
+	public static String cek1 ;
+	public static double balanceE = 0.00;
+	public static double balance =999.999;
 	
-	public static String balance ="999.999,99";
 // area P2M4F
 static void sessionPanelMain() {
 	sessionPanelMain.setLayout(null);
@@ -380,11 +382,12 @@ static void current_sessionBalanceUI() {
 	current_sessionBalanceUI.setLayout(null);
 	current_sessionBalanceUI.setBounds(10, 20, 190, 50);
 	current_sessionBalanceUI.setBackground(Color.DARK_GRAY);
+	cek = String.valueOf(balance);
 }
 // area P2FF4
 static void current_sessionBalance() {
 	
-	current_sessionBalance.setText(balance);
+	current_sessionBalance.setText(cek);
 	current_sessionBalance.setForeground(new Color(232,232,232));
 	current_sessionBalance.setBounds(1,1,170,50);
 	current_sessionBalance.setFont(new Font("",Font.BOLD,30));
@@ -421,7 +424,7 @@ static void withdrawmoney() {
 static void withdrawmoneyLis() {
 	withdrawmoneySub.addActionListener(new ActionListener(){
 		public void actionPerformed(ActionEvent t22) {
-			
+			current_sessionMenu.dispose();
 			withdrawmoneyTab();
 			
 		}
@@ -435,7 +438,7 @@ static void withdrawmoneyTab() {
 	withdrawmoneyTab.getContentPane().setBackground(Color.black);
 	withdrawmoneyTab.setLocation(700,400);
 	withdrawmoneyTab.setSize(340, 150);
-	withdrawmoneyTab.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//	withdrawmoneyTab.setDefaultCloseOperation(withdrawmoneyTab.EXIT_ON_CLOSE);
 	withdrawmoneyTab.setResizable(false);
 	withdrawmoneyTab.setVisible(true);
 	
@@ -466,11 +469,16 @@ static void withdrawmoneyBalanceShowPanel() {
 	withdrawmoneyBalanceShowPanel.setBounds(154, 15, 85, 24);
 }
 static void withdrawmoneyBalanceShowTxt() {
-	withdrawmoneyBalanceShowTxt.setText(balance);
 	withdrawmoneyBalanceShowTxt.setFont(new Font("",Font.BOLD,16));
 	withdrawmoneyBalanceShowTxt.setForeground(Color.white);
 	withdrawmoneyBalanceShowTxt.setBorder(BorderFactory.createEmptyBorder(-2,0,0,0));
+	withdrawmoneyBalanceShowTxt.setText(cek);
+	cek = String.valueOf(balance);
+	
 }
+
+
+
 static void amountwithdrawnPanel() {
 	amountwithdrawnPanel.setBackground(Color.DARK_GRAY);
 	amountwithdrawnPanel.setBounds(20, 55, 180, 24);
@@ -484,10 +492,12 @@ static void amountwithdrawnTxt() {
 static void amountwithdrawnTxPanel() {
 	amountwithdrawnTxPanel.setBackground(Color.DARK_GRAY);
 	amountwithdrawnTxPanel.setBounds(205,57,57,24);
-
+	amountwithdrawnField.setText(cek1);
+	cek1 = String.valueOf(balanceE);
 }
 static void amountwithdrawnField() {
-	amountwithdrawnField.setText("0,00");
+	
+	amountwithdrawnField.setText(cek1);
 	amountwithdrawnField.setSelectedTextColor(Color.DARK_GRAY);
 	amountwithdrawnField.setDisabledTextColor(Color.black);
 	amountwithdrawnField.setBackground(Color.DARK_GRAY);
@@ -507,6 +517,15 @@ static void Check() {
 	
 	Check.setBackground(new Color(232,232,232));
 	Check.setForeground(Color.DARK_GRAY);
+}
+static void CheckLis() {
+	Check.addActionListener(new ActionListener(){
+		public void actionPerformed(ActionEvent i77) {
+			
+				
+
+		}
+	});
 }
 
 //area P2FF0
