@@ -324,9 +324,10 @@ public static JPanel current_sessionIdCustomerUI = new JPanel();
 	public static int cek2 ;
 	public static int cek3 ;
 	public static String cek4 ;
-	public static double balanceE = 0.00;
-	public static double balance =999.999;
-	
+	public static int balanceE = 0;
+	public static int balance =999;
+	public static int cekilmek2;
+	public static 	String cekilmek;
 // area P2M4F
 static void sessionPanelMain() {
 	sessionPanelMain.setLayout(null);
@@ -441,7 +442,7 @@ static void withdrawmoneyTab() {
 	withdrawmoneyTab.getContentPane().setBackground(Color.black);
 	withdrawmoneyTab.setLocation(700,400);
 	withdrawmoneyTab.setSize(340, 150);
-//	withdrawmoneyTab.setDefaultCloseOperation(withdrawmoneyTab.EXIT_ON_CLOSE);
+	withdrawmoneyTab.setDefaultCloseOperation(withdrawmoneyTab.EXIT_ON_CLOSE);
 	withdrawmoneyTab.setResizable(false);
 	withdrawmoneyTab.setVisible(true);
 	
@@ -523,18 +524,16 @@ static void CheckLis() {
 	Check.addActionListener(new ActionListener(){
 		public void actionPerformed(ActionEvent i77) {
 			
-				balance = balance - balanceE;
+				 cekilmek = withdrawmoneyBalanceShowTxt.getText();
 				
+				 cekilmek2 = Integer.parseInt(cekilmek);
 				
-				cek1 = String.valueOf(balanceE);
-				amountwithdrawnField.setText(cek1);
+					balance = balance - cekilmek2;
+
 				
+				cekilmek = String.valueOf(balance);
+				withdrawmoneyBalanceShowTxt.setText(cekilmek);
 				
-				cek = String.valueOf(balance);
-				withdrawmoneyBalanceShowTxt.setText(cek);
-				
-				cek = String.valueOf(balance);
-				current_sessionBalance.setText(cek);
 		}
 	});
 }
