@@ -321,6 +321,9 @@ public static JPanel current_sessionIdCustomerUI = new JPanel();
 
 	public static String cek ;
 	public static String cek1 ;
+	public static int cek2 ;
+	public static int cek3 ;
+	public static String cek4 ;
 	public static double balanceE = 0.00;
 	public static double balance =999.999;
 	
@@ -469,6 +472,7 @@ static void withdrawmoneyBalanceShowPanel() {
 	withdrawmoneyBalanceShowPanel.setBounds(154, 15, 85, 24);
 }
 static void withdrawmoneyBalanceShowTxt() {
+	
 	withdrawmoneyBalanceShowTxt.setFont(new Font("",Font.BOLD,16));
 	withdrawmoneyBalanceShowTxt.setForeground(Color.white);
 	withdrawmoneyBalanceShowTxt.setBorder(BorderFactory.createEmptyBorder(-2,0,0,0));
@@ -476,9 +480,6 @@ static void withdrawmoneyBalanceShowTxt() {
 	cek = String.valueOf(balance);
 	
 }
-
-
-
 static void amountwithdrawnPanel() {
 	amountwithdrawnPanel.setBackground(Color.DARK_GRAY);
 	amountwithdrawnPanel.setBounds(20, 55, 180, 24);
@@ -522,8 +523,18 @@ static void CheckLis() {
 	Check.addActionListener(new ActionListener(){
 		public void actionPerformed(ActionEvent i77) {
 			
+				balance = balance - balanceE;
 				
-
+				
+				cek1 = String.valueOf(balanceE);
+				amountwithdrawnField.setText(cek1);
+				
+				
+				cek = String.valueOf(balance);
+				withdrawmoneyBalanceShowTxt.setText(cek);
+				
+				cek = String.valueOf(balance);
+				current_sessionBalance.setText(cek);
 		}
 	});
 }
@@ -588,7 +599,7 @@ CheckPanel.add(Check);
 CheckPanel();
 Check();
 withdrawmoneyLis();
-
+CheckLis();
 
 }
 static void testBlok() {
