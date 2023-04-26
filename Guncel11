@@ -56,6 +56,7 @@ public static JPasswordField LPASS1 = new JPasswordField(10);
 //area A0V4D
 public static JButton SUBMİT = new JButton();
 
+public static String NN = "7523";
 
 static void timeOut() {
 	try {
@@ -154,10 +155,7 @@ static void TextPassField() {
 	LPASS1.setBorder(BorderFactory.createEmptyBorder(0,0,0,0));
 	LPASS1.setFont(new Font("",Font.PLAIN,16));
 }
-
-
 static void Submit() {
-	
 	SUBMİT.setText("➜|");
 	SUBMİT.setBackground(new Color(232,232,232));
 	SUBMİT.setForeground(Color.DARK_GRAY);
@@ -181,7 +179,6 @@ static void testIt() {
 	String Pass   = LPASS1.getText();
 	if(CusNum.equals("7523") && Pass.equals("1024")) {
 		
-	
 		/**********************************************
 		 *              Setting for testIt            *
 		 * ------------------------------------------ *
@@ -200,7 +197,6 @@ static void testIt() {
 
 }
 
-
 //area PR3LX
 static <Icon> void LoginMenu() {
 	LOGİNMENU.setTitle("LoginPage/GirşSayfası");
@@ -214,9 +210,7 @@ static <Icon> void LoginMenu() {
 	LOGİNMENU.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	LOGİNMENU.setResizable(false);
 	LOGİNMENU.setVisible(true);
-	
 	addBlokLoginPage();
-	
 }
 
 //area BL2KQ
@@ -290,16 +284,16 @@ public static JButton current_sessionCheckOut = new JButton();
 
 // area P2FF4
 public static JPanel current_sessionBalanceUI = new JPanel();
-	public static JLabel current_sessionBalance = new JLabel();
-	public static JLabel current_sessionBalanceF = new JLabel(); //fraction
+public static JLabel current_sessionBalance = new JLabel();
+public static JLabel current_sessionBalanceF = new JLabel(); //fraction
 	
 // area P2FF5
 public static JPanel current_sessionIdCustomerUI = new JPanel();
-	public static JLabel current_sessionIdCustomer = new JLabel();
+public static JLabel current_sessionIdCustomer = new JLabel();
 	
 
 // area P2FF7 
-	public static Icon image = new ImageIcon("UserIcon.png");
+public static Icon image = new ImageIcon("UserIcon.png");
 	
 // area P2FF8
 	public static JButton withdrawmoneySub = new JButton();
@@ -309,22 +303,12 @@ public static JPanel current_sessionIdCustomerUI = new JPanel();
 	public static JLabel withdrawmoneyBalanceTxt = new JLabel();
 	public static JPanel withdrawmoneyBalanceShowPanel  = new JPanel();
 	public static JLabel withdrawmoneyBalanceShowTxt = new JLabel();
-	public static JPanel amountwithdrawnPanel = new JPanel();
-	public static JLabel amountwithdrawnTxt = new JLabel();
-	public static JPanel amountwithdrawnTxPanel = new JPanel();
-	public static JTextField amountwithdrawnField = new JTextField(5);
-	public static JPanel CheckPanel = new JPanel();
-	public static JButton Check = new JButton();
-	
-	
-	public static JPanel f = new JPanel();
-	
 
+	public static JPanel f = new JPanel();
 	
 	public static int giris = 0;
 	public static int bakiye =999;
 	public static int result;
-	public static int cekilecek;
 	
 	public static String tr;
 	public static String te;
@@ -335,33 +319,27 @@ public static JPanel current_sessionIdCustomerUI = new JPanel();
 static void sessionPanelMain() {
 	sessionPanelMain.setLayout(null);
 	sessionPanelMain.setBackground(Color.DARK_GRAY);
-	sessionPanelMain.setBounds(0, 0, 500, 300);
-	
+	sessionPanelMain.setBounds(0, 0, 500, 300);	
 }
 
 //area P2FF3
 static void current_sessionMenu() {
-
 	Dimension dimension;
-//	current_sessionMenu.setTitle("SessionPage/OturumSayfası");
+	current_sessionMenu.setTitle("SessionPage/OturumSayfası");
 //	URL url = ATM.class.getResource("/sessionIcon.png");
 //    current_sessionMenu.setIconImage(Toolkit.getDefaultToolkit().getImage(url));
-    current_sessionMenu.setTitle("SessionPage/OturumSayfası");
     current_sessionMenu.setLayout(null);
 	current_sessionMenu.getContentPane().setBackground(Color.DARK_GRAY);
 	current_sessionMenu.setSize(500,300);
 	current_sessionMenu.setLocation(600,350);
-	
-//	current_sessionMenu.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+	current_sessionMenu.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 	current_sessionMenu.setResizable(false);
 	current_sessionMenu.setVisible(true);
-	
 	addBlok_current_session();
 }
 
 //area P2FF2
 static void current_sessionCheckOut() {
-
 	current_sessionCheckOut.setText("sign out");
 	current_sessionCheckOut.setBackground(Color.DARK_GRAY);
 	current_sessionCheckOut.setBounds(424, 1, 50, 20);
@@ -383,13 +361,11 @@ static void current_sessionCheckOutLis() {
 	});
 }
 
-
 // area P2FF4
 static void current_sessionBalanceUI() {
 	current_sessionBalanceUI.setLayout(null);
-	current_sessionBalanceUI.setBounds(10, 20, 190, 50);
+	current_sessionBalanceUI.setBounds(10, 20, 190, 70);
 	current_sessionBalanceUI.setBackground(Color.DARK_GRAY);
-	
 }
 // area P2FF4
 static void current_sessionBalance() {
@@ -397,7 +373,7 @@ static void current_sessionBalance() {
 	current_sessionBalance.setText(tr);
 	current_sessionBalance.setForeground(new Color(232,232,232));
 	current_sessionBalance.setBounds(1,1,170,50);
-	current_sessionBalance.setFont(new Font("",Font.BOLD,30));
+	current_sessionBalance.setFont(new Font("",Font.CENTER_BASELINE,50));
 //	current_sessionBalance.setBorder(BorderFactory.createEmptyBorder());
 }
 
@@ -409,7 +385,7 @@ static void current_sessionIdCustomerUI() {
 
 // arae P2FF5
 static void current_sessionIdCustomer() {
-	current_sessionIdCustomer.setText("7523");
+	current_sessionIdCustomer.setText(NN);
 	
 	current_sessionIdCustomer.setForeground(new Color(232,232,232));
 //	current_sessionIdCustomer.setBounds(1,1,70,50);
@@ -424,27 +400,30 @@ static void withdrawmoney() {
 	withdrawmoneySub.setForeground(Color.DARK_GRAY);
 	withdrawmoneySub.setBorder(BorderFactory.createEmptyBorder(0,0,0,0));
 	withdrawmoneySub.setBounds(10, 100, 90, 30);
-	
 }
 
 // area P2FF8
 static void withdrawmoneyLis() {
 	withdrawmoneySub.addActionListener(new ActionListener(){
 		public void actionPerformed(ActionEvent t22) {
-		
+			try {
 			
 			giris =Integer.parseInt(JOptionPane.showInputDialog(null,"Çekilmek istenen tutar","ParaÇekme",JOptionPane.PLAIN_MESSAGE));
 			if(giris>bakiye) {
 			JOptionPane.showMessageDialog(null,"işlem için bakiyeniz yetersizdir","ParaÇekmeHata",JOptionPane.CANCEL_OPTION);
 			}
+			else if(giris<=0) {
+				JOptionPane.showMessageDialog(null,"Lütfen geçerli bir değer giriniz.","Sistem",JOptionPane.ERROR_MESSAGE);
+			}
 			else {
 				bakiye -=giris;
-				
 				te = Integer.toString(bakiye);
 				current_sessionBalance.setText(te);
+				JOptionPane.showMessageDialog(null,"Para Çekme işlemi başaralı! çekilen tutar : " + giris,"ParaÇekme",JOptionPane.PLAIN_MESSAGE);
 
+			}}catch(Exception f33) {
+				JOptionPane.showMessageDialog(null,"lütfen sadece sayı giriniz","SistemHata",JOptionPane.ERROR_MESSAGE);
 			}
-			
 			
 		}
 	});
@@ -453,33 +432,31 @@ static void withdrawmoneyLis() {
 
 //area P2FF0
 static void addBlok_current_session() {
-current_sessionCheckOut();
-current_sessionCheckOutLis();
-	sessionPanelMain.add(current_sessionCheckOut);
+
+sessionPanelMain.add(current_sessionCheckOut);
+		current_sessionCheckOut();
+		current_sessionCheckOutLis();
 		
+sessionPanelMain.add(current_sessionBalanceUI);
+		current_sessionBalanceUI();
 
-current_sessionBalanceUI();
- sessionPanelMain.add(current_sessionBalanceUI);
+current_sessionBalanceUI.add(current_sessionBalance);
+		current_sessionBalance();
+		
+current_sessionMenu.add(sessionPanelMain);
+		sessionPanelMain();
 
+current_sessionMenu.add(current_sessionIdCustomerUI);
+		current_sessionIdCustomer();
 
-current_sessionBalance();
-	current_sessionBalanceUI.add(current_sessionBalance);
-	
- sessionPanelMain();
- 	current_sessionMenu.add(sessionPanelMain);
-
- current_sessionIdCustomer();
- 	current_sessionMenu.add(current_sessionIdCustomerUI);
- 	
- current_sessionIdCustomerUI.add(current_sessionIdCustomer);
+current_sessionIdCustomerUI.add(current_sessionIdCustomer);
+		current_sessionIdCustomerUI();
  
- 	current_sessionIdCustomerUI();
- 	sessionPanelMain.add(current_sessionIdCustomerUI);
-
+sessionPanelMain.add(current_sessionIdCustomerUI);
  	
 sessionPanelMain.add(withdrawmoneySub);
-withdrawmoney();
 
+withdrawmoney();
 withdrawmoneyLis();
 }
 static void testBlok() {
