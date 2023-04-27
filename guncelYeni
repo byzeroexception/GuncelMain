@@ -315,6 +315,10 @@ public static Icon image = new ImageIcon("UserIcon.png");
 
 	public static JButton pays = new JButton();
 	public static JButton EFT  = new JButton();
+	public static JButton setting = new JButton();
+	public static JButton accounds = new JButton();
+	public static JButton payments = new JButton();
+	public static JButton profileSet = new JButton();
 	
 	public static int output = 0;
 	public static int balance =999;
@@ -351,7 +355,7 @@ static void current_sessionMenu() {
 
 //area P2FF2
 static void current_sessionCheckOut() {
-	current_sessionCheckOut.setText("sign out");
+	current_sessionCheckOut.setText("Çıkış");
 	current_sessionCheckOut.setBackground(Color.DARK_GRAY);
 	current_sessionCheckOut.setBounds(424, 1, 50, 20);
 	current_sessionCheckOut.setForeground(new Color(232,232,232));
@@ -505,7 +509,63 @@ static void EFTList() {
 		}
 	});
 }
+static void accounds() {
+	accounds.setText("Hesaplarım");
+	accounds.setBackground(new Color(232,232,232));
+	accounds.setForeground(Color.DARK_GRAY);
+	accounds.setBorder(BorderFactory.createEmptyBorder(0,0,0,0));
+	accounds.setBounds(10, 135, 90, 30);
+}
+static void accoundsList() {
+	accounds.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent d222) {
+			JOptionPane.showMessageDialog(null,"Hesaplarım işlemi şuanda hizmet dışıdır.","Sistem",JOptionPane.INFORMATION_MESSAGE);
+		}
+	});
+}
 
+static void setting() {
+	setting.setText("Ayarlar");
+	setting.setBackground(new Color(232,232,232));
+	setting.setForeground(Color.DARK_GRAY);
+	setting.setBorder(BorderFactory.createEmptyBorder(0,0,0,0));
+	setting.setBounds(105, 135, 90, 30);
+}
+static void settingList() {
+	setting.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent d222) {
+			JOptionPane.showMessageDialog(null,"Ayarlar işlemi şuanda hizmet dışıdır.","Sistem",JOptionPane.INFORMATION_MESSAGE);
+		}
+	});
+}
+static void payments() {
+	payments.setText("Ödemeler");
+	payments.setBackground(new Color(232,232,232));
+	payments.setForeground(Color.DARK_GRAY);
+	payments.setBorder(BorderFactory.createEmptyBorder(0,0,0,0));
+	payments.setBounds(200, 135, 90, 30);
+}
+static void paymentsList() {
+	payments.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent d222) {
+			JOptionPane.showMessageDialog(null,"Ödemeler işlemi şuanda hizmet dışıdır.","Sistem",JOptionPane.INFORMATION_MESSAGE);
+		}
+	});
+}
+static void profileSet() {
+	profileSet.setText("Profili Düzenle");
+	profileSet.setBackground(new Color(232,232,232));
+	profileSet.setForeground(Color.DARK_GRAY);
+	profileSet.setBorder(BorderFactory.createEmptyBorder(0,0,0,0));
+	profileSet.setBounds(10, 170, 280, 30);
+}
+static void profileSetList() {
+	profileSet.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent d222) {
+			JOptionPane.showMessageDialog(null,"Profili Düzenle işlemi şuanda hizmet dışıdır.","Sistem",JOptionPane.INFORMATION_MESSAGE);
+		}
+	});
+}
 
 //area P2FF0
 static void addBlok_current_session() {
@@ -542,6 +602,19 @@ sessionPanelMain.add(pays);
 sessionPanelMain.add(EFT);
 		EFT();
 		EFTList();
+sessionPanelMain.add(setting);
+		setting();
+		settingList();
+sessionPanelMain.add(accounds);
+		accounds();
+		accoundsList();
+sessionPanelMain.add(payments);
+		payments();
+		paymentsList();
+sessionPanelMain.add(profileSet);
+		profileSet();
+		profileSetList();
+		
 }
 static void testBlok() {
 	
@@ -550,7 +623,7 @@ static void testBlok() {
 
 //area M323IC
 public static void main(String [] args) {
-	LoginMenu();
-//current_sessionMenu();
+//	LoginMenu();
+current_sessionMenu();
 }
 }
