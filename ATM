@@ -647,25 +647,5 @@ AccoundHis();
 static void testBlok() {
 	
 }
-//area M323IC
-public static void main(String [] args) {
-		
-		LoginMenu();
-//		current_sessionMenu();
-	}
-}
-
-
-
-
-
-
-public class Run {
-
-	public static void main(String [] args) {
-		ATM atm = new ATM();
-		atm.LoginMenu();
-//		atm.current_sessionMenu();
-	}
 
 }
