@@ -1,0 +1,45 @@
+package help;
+
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public class CustomerRegistration {
+	public static ATM atm = new ATM();
+	
+//    CR_frame_SETTİNG
+	public static JFrame CR_frame = new JFrame();
+	public static JPanel CR_panel = new JPanel();
+	
+	static void eftsetting() {
+	CR_frame.setTitle("ATM/MüşteriKayıt");	
+	CR_frame.getContentPane().setBackground(Color.black);
+	CR_frame.setSize(400,400);
+	CR_frame.setLocation(700,500);
+	CR_frame.setLayout(null);
+	CR_frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	CR_frame.setVisible(true);
+	CR_frame.add(CR_panel);
+	
+	//CR_panel_SETTİNG
+	CR_panel.setBackground(Color.DARK_GRAY);
+	CR_panel.setBounds(10, 10, 150, 100);
+	CR_panel.setLayout(null);
+	}
+	static void EFT(){
+		atm.setting.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent i54) {
+				eftsetting();
+			}
+		})
+		;
+	}
+	
+	
+
+	
+	
+}
