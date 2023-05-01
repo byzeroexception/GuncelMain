@@ -1,9 +1,15 @@
+package help;
+
 public class main {
 
 	public static void main(String [] args) {
-//		ATM.LoginMenu();
+		ATM.LoginMenu();
 		CustomerRegistration CR = new CustomerRegistration();
-		
+		CusRegLog CRL = new CusRegLog();
 		CR.addBlok();
+		CRL.addblok();
+		
+		
+		
 	}
 }
