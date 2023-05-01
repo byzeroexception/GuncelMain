@@ -1,3 +1,4 @@
+package help;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -9,10 +10,12 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 public class CustomerRegistration {
 	public static ATM atm = new ATM();
+	
 	
 //    CR_frame_SETTİNG
 	public static JFrame CR_frame = new JFrame();
@@ -49,18 +52,21 @@ public class CustomerRegistration {
 	public static JLabel CR_Txt_5 = new JLabel();
 	
 	public static JPanel CR_Tx_11 = new JPanel();
-	public static JTextField FPass = new JTextField(10);
+	public static JPasswordField FPass = new JPasswordField(10);
 	
 	public static JPanel CR_Tx_12 = new JPanel();
 	public static JLabel CR_Txt_6 = new JLabel();
 	
 	public static JPanel CR_Tx_13 = new JPanel();
-	public static JTextField FPassRec = new JTextField(10);
+	public static JPasswordField FPassRec = new JPasswordField(10);
 	
 	public static JButton submit = new JButton();
 	public static JButton giveup = new JButton();
 	
-	
+	static void timeout() {
+		try {Thread.sleep(500);
+		}catch(Exception c) {}
+	}
 	static void CustomerRegistration() {
 		CR_button.setBorder(null);
 		CR_button.setText("Parabank'lı ol");
@@ -126,6 +132,7 @@ public class CustomerRegistration {
 		CR_panel.add(CR_Tx_3);
 	}
 	static void Fname() {
+		
 		Fname.setBackground(new Color(90,90,90));
 		Fname.setForeground(Color.white);
 		Fname.setBorder(BorderFactory.createEmptyBorder(0,0,0,-22));
@@ -266,6 +273,14 @@ public class CustomerRegistration {
 		submit.setBounds(380, 220, 80, 20);
 		CR_panel.add(submit);
 	}
+	static void submitLis() {
+		submit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent ig242) {
+				CusRegLog.label();
+				CusRegLog.IfPasswordEqualsName();
+			}
+		});
+	}
 	static void giveup() {
 		giveup.setText("Vazgeç");
 		giveup.setBorder(null);
@@ -274,6 +289,16 @@ public class CustomerRegistration {
 		giveup.setBounds(288, 220, 80, 20);
 		CR_panel.add(giveup);
 	}
+	static void giveupLis() {
+		giveup.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent ig22) {
+				CR_frame.dispose();
+				atm.LoginMenu();
+			}
+		});
+	}
+	
+	
 	static void addBlok() {
 		CustomerRegistration();
 		CustomerRegistrationLis();
@@ -305,7 +330,13 @@ public class CustomerRegistration {
 	    txtPanel10();
 	    submit();
 	    giveup();
-		CustomerRegistrationPage();
+	    giveupLis();
+	    submitLis();
+	  
+	    CusRegLog.log();
+		
+
+//		CustomerRegistrationPage();
 	}
 	
 	}
