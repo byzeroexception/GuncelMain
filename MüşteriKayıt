@@ -58,6 +58,7 @@ public class CustomerRegistration {
 	public static JTextField FPassRec = new JTextField(10);
 	
 	public static JButton submit = new JButton();
+	public static JButton giveup = new JButton();
 	
 	
 	static void CustomerRegistration() {
@@ -88,6 +89,7 @@ public class CustomerRegistration {
 	CR_frame.add(CR_panel);
 	
 	//CR_panel_SETTİNG
+	
 	CR_panel.setBackground(Color.DARK_GRAY);
 	CR_panel.setBounds(0, 0, 500, 300);
 	CR_panel.setLayout(null);
@@ -107,7 +109,7 @@ public class CustomerRegistration {
 	}
 	static void txPanel1(){
 		CR_Tx_2.setLayout(null);
-		CR_Tx_2.setBackground(Color.white);
+		CR_Tx_2.setBackground(Color.DARK_GRAY);
 		CR_Tx_2.setBounds(5,100,60,28);
 		CR_panel.add(CR_Tx_2);
 	}
@@ -115,11 +117,11 @@ public class CustomerRegistration {
 		CR_Txt1.setText("İsim:");
 		CR_Txt1.setBounds(28, -2, 80, 30);
 		CR_Txt1.setFont(new Font("",Font.PLAIN,14));
-		CR_Txt1.setForeground(Color.red);
+		CR_Txt1.setForeground(Color.white);
 		CR_Tx_2.add(CR_Txt1);
 	}
 	static void FnamePanel() {
-		CR_Tx_3.setBackground(Color.white);
+		CR_Tx_3.setBackground(Color.DARK_GRAY);
 		CR_Tx_3.setBounds(67, 100, 100, 28);
 		CR_panel.add(CR_Tx_3);
 	}
@@ -132,7 +134,7 @@ public class CustomerRegistration {
 	}
 	static void txtPanel1() {
 		CR_Tx_4.setLayout(null);
-		CR_Tx_4.setBackground(Color.white);
+		CR_Tx_4.setBackground(Color.DARK_GRAY);
 		CR_Tx_4.setBounds(5, 130, 60, 28);
 		CR_panel.add(CR_Tx_4);
 	}
@@ -140,11 +142,11 @@ public class CustomerRegistration {
 		CR_Txt2.setText("Soyisim:");
 		CR_Txt2.setBounds(5, -2, 80, 30);
 		CR_Txt2.setFont(new Font("",Font.PLAIN,14));
-		CR_Txt2.setForeground(Color.red);
+		CR_Txt2.setForeground(Color.white);
 		CR_Tx_4.add(CR_Txt2);
 	}
 	static void txtPanel2() {
-		CR_Tx_5.setBackground(Color.white);
+		CR_Tx_5.setBackground(Color.DARK_GRAY);
 		CR_Tx_5.setBounds(67, 130, 100, 28);
 		CR_panel.add(CR_Tx_5);
 	}
@@ -157,19 +159,19 @@ public class CustomerRegistration {
 	}
 	static void txtPanel3() {
 		CR_Tx_6.setLayout(null);
-		CR_Tx_6.setBackground(Color.white);
+		CR_Tx_6.setBackground(Color.DARK_GRAY);
 		CR_Tx_6.setBounds(5, 160, 60, 28);
 		CR_panel.add(CR_Tx_6);
 	}
 	static void txtLabel3() {
 		CR_Txt_3.setText("e-posta:");
-		CR_Txt_3.setForeground(Color.red);
+		CR_Txt_3.setForeground(Color.white);
 		CR_Txt_3.setBounds(5, -2, 80, 30);
 		CR_Txt_3.setFont(new Font("",Font.PLAIN,14));
 		CR_Tx_6.add(CR_Txt_3);
 	}
 	static void txtPanel4() {
-		CR_Tx_7.setBackground(Color.white);
+		CR_Tx_7.setBackground(Color.DARK_GRAY);
 		CR_Tx_7.setBounds(67, 160, 100, 28);
 		CR_panel.add(CR_Tx_7);
 	}
@@ -182,19 +184,19 @@ public class CustomerRegistration {
 	}
 	static void txtPanel5() {
 		CR_Tx_8.setLayout(null);
-		CR_Tx_8.setBackground(Color.white);
+		CR_Tx_8.setBackground(Color.DARK_GRAY);
 		CR_Tx_8.setBounds(240,100,120,28);
 		CR_panel.add(CR_Tx_8);
 	}
 	static void txtLabel4() {
 		CR_Txt_4.setText("Hesap Numarası:");
-		CR_Txt_4.setForeground(Color.red);
+		CR_Txt_4.setForeground(Color.white);
 		CR_Txt_4.setBounds(10, -2, 111, 30);
 		CR_Txt_4.setFont(new Font("",Font.PLAIN,14));
 		CR_Tx_8.add(CR_Txt_4);
 	}
 	static void txtPanel6() {
-		CR_Tx_9.setBackground(Color.white);
+		CR_Tx_9.setBackground(Color.DARK_GRAY);
 		CR_Tx_9.setBounds(362,100,100,28);
 		CR_panel.add(CR_Tx_9);
 	}
@@ -207,19 +209,19 @@ public class CustomerRegistration {
 	}
 	static void txtPanel7() {
 		CR_Tx_10.setLayout(null);
-		CR_Tx_10.setBackground(Color.white);
+		CR_Tx_10.setBackground(Color.DARK_GRAY);
 		CR_Tx_10.setBounds(240,130,120,28);
 		CR_panel.add(CR_Tx_10);
 	}
 	static void txtLabel6() {
 		CR_Txt_5.setText("Şifre:");
-		CR_Txt_5.setForeground(Color.red);
+		CR_Txt_5.setForeground(Color.white);
 		CR_Txt_5.setBounds(83, -2, 111, 30);
 		CR_Txt_5.setFont(new Font("",Font.PLAIN,14));
 		CR_Tx_10.add(CR_Txt_5);
 	}
 	static void txtPanel8() {
-		CR_Tx_11.setBackground(Color.white);
+		CR_Tx_11.setBackground(Color.DARK_GRAY);
 		CR_Tx_11.setBounds(362,130,100,28);
 		CR_panel.add(CR_Tx_11);
 	}
@@ -232,19 +234,19 @@ public class CustomerRegistration {
 	}
 	static void txtPanel9() {
 		CR_Tx_12.setLayout(null);
-		CR_Tx_12.setBackground(Color.white);
+		CR_Tx_12.setBackground(Color.DARK_GRAY);
 		CR_Tx_12.setBounds(240,160,120,28);
 		CR_panel.add(CR_Tx_12);
 	}
 	static void txtLabel7() {
 		CR_Txt_6.setText("Şifre tekrarı:");
-		CR_Txt_6.setForeground(Color.red);
+		CR_Txt_6.setForeground(Color.white);
 		CR_Txt_6.setBounds(40, -2, 111, 30);
 		CR_Txt_6.setFont(new Font("",Font.PLAIN,14));
 		CR_Tx_12.add(CR_Txt_6);	
 	}
 	static void txtPanel10() {
-		CR_Tx_13.setBackground(Color.white);
+		CR_Tx_13.setBackground(Color.DARK_GRAY);
 		CR_Tx_13.setBounds(362,160,100,28);
 		CR_panel.add(CR_Tx_13);
 	}
@@ -258,9 +260,19 @@ public class CustomerRegistration {
 	
 	static void submit() {
 		submit.setText("Gönder");
-		submit.setBackground(Color.white);
-		submit.setForeground(Color.DARK_GRAY);
-		
+		submit.setBorder(null);
+		submit.setBackground(Color.DARK_GRAY);
+		submit.setForeground(Color.white);
+		submit.setBounds(380, 220, 80, 20);
+		CR_panel.add(submit);
+	}
+	static void giveup() {
+		giveup.setText("Vazgeç");
+		giveup.setBorder(null);
+		giveup.setBackground(Color.DARK_GRAY);
+		giveup.setForeground(Color.white);
+		giveup.setBounds(288, 220, 80, 20);
+		CR_panel.add(giveup);
 	}
 	static void addBlok() {
 		CustomerRegistration();
@@ -291,7 +303,8 @@ public class CustomerRegistration {
 	    txtLabel7();
 	    FPassRec();
 	    txtPanel10();
-	    
+	    submit();
+	    giveup();
 		CustomerRegistrationPage();
 	}
 	
