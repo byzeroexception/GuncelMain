@@ -1,10 +1,9 @@
-package help;
-
 public class main {
-	public static 	CustomerRegistration CR = new CustomerRegistration();
-	public static void main(String [] args) {
-		ATM.LoginMenu();
-		CR.EFT();
 
+	public static void main(String [] args) {
+//		ATM.LoginMenu();
+		CustomerRegistration CR = new CustomerRegistration();
+		
+		CR.addBlok();
 	}
 }
