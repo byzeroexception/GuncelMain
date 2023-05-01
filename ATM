@@ -1,4 +1,3 @@
-package help;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -20,6 +19,10 @@ import javax.swing.WindowConstants;
 
 public class ATM { 
 
+	
+//exceptions
+	public static JButton CR = new JButton(); 
+	
 public static JFrame LOGİNMENU = new JFrame(); 
 // public static JFrame PAGENAME = new JFrame(); 
 // public static JFrame PAGENAME2 = new JFrame();
@@ -204,8 +207,8 @@ static void testIt() {
 static <Icon> void LoginMenu() {
 	LOGİNMENU.setTitle("LoginPage/GirşSayfası");
    
-	URL url = ATM.class.getResource("/sessionIcon.png");
-    LOGİNMENU.setIconImage(Toolkit.getDefaultToolkit().getImage(url));
+//	URL url = ATM.class.getResource("/sessionIcon.png");
+//    LOGİNMENU.setIconImage(Toolkit.getDefaultToolkit().getImage(url));
 	LOGİNMENU.setLayout(null);
 	LOGİNMENU.getContentPane().setBackground(Color.black);
 	LOGİNMENU.setSize(500,250);
@@ -251,6 +254,11 @@ static void addBlokLoginPage() {
 																		
 	LOGİNMENU.add(LoginPage);
 	LoginPagePanelSetting();
+	
+//	exceptions
+	
+	LoginPage.add(CR);
+	
 }
  
 
@@ -262,7 +270,7 @@ static void addBlokLoginPage() {
  *               PAGE2 SystemUI / Sayfa2 SistemArayüzü           *
  * ------------------------------------------------------------- *
  *  * 
- *  *             
+ **  *             
  *  *            
  *  *
  *  *             
@@ -340,8 +348,8 @@ static void sessionPanelMain() {
 static void current_sessionMenu() {
 	Dimension dimension;
 	current_sessionMenu.setTitle("SessionPage/OturumSayfası");
-	URL url = ATM.class.getResource("/Icon.png");
-	current_sessionMenu.setIconImage(Toolkit.getDefaultToolkit().getImage(url));
+//	URL url = ATM.class.getResource("/Icon.png");
+//	current_sessionMenu.setIconImage(Toolkit.getDefaultToolkit().getImage(url));
     current_sessionMenu.setLayout(null);
 	current_sessionMenu.getContentPane().setBackground(Color.DARK_GRAY);
 	current_sessionMenu.setSize(500,300);
