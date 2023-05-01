@@ -1,11 +1,15 @@
-package help;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 public class CustomerRegistration {
 	public static ATM atm = new ATM();
@@ -13,33 +17,133 @@ public class CustomerRegistration {
 //    CR_frame_SETTİNG
 	public static JFrame CR_frame = new JFrame();
 	public static JPanel CR_panel = new JPanel();
+	public static JButton CR_button = new JButton();
+	public static JPanel CR_Tx_1 = new JPanel();
+	public static JLabel CR_Txt = new JLabel();
 	
-	static void eftsetting() {
+	public static JPanel CR_Tx_2 = new JPanel();
+	public static JLabel CR_Txt1 = new JLabel();
+
+	public static JPanel CR_Tx_3 = new JPanel();
+	public static JTextField Fname = new JTextField(10);
+	
+	public static JPanel CR_Tx_4 = new JPanel();
+	public static JLabel CR_Txt2 = new JLabel();
+	
+	public static JPanel CR_Tx_5 = new JPanel();
+	public static JTextField FFname = new JTextField(10);
+	
+	static void CustomerRegistration() {
+		CR_button.setBorder(null);
+		CR_button.setText("Parabank'lı ol");
+		CR_button.setBackground(Color.DARK_GRAY);
+		CR_button.setForeground(new Color(232,232,232));
+		CR_button.setBounds(245,170, 90, 20);
+		atm.LoginPage.add(CR_button);
+	}
+	static void CustomerRegistrationLis() {
+	CR_button.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent t343) {
+			atm.LOGİNMENU.dispose();
+			CustomerRegistrationPage();
+		}
+	});
+	}
+	static void CustomerRegistrationPage() {
 	CR_frame.setTitle("ATM/MüşteriKayıt");	
-	CR_frame.getContentPane().setBackground(Color.black);
-	CR_frame.setSize(400,400);
-	CR_frame.setLocation(700,500);
 	CR_frame.setLayout(null);
+	CR_frame.getContentPane().setBackground(Color.black);
+	CR_frame.setSize(500,300);
+	CR_frame.setLocation(600,350);
 	CR_frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	CR_frame.setVisible(true);
+	CR_frame.setResizable(false);
 	CR_frame.add(CR_panel);
 	
 	//CR_panel_SETTİNG
 	CR_panel.setBackground(Color.DARK_GRAY);
-	CR_panel.setBounds(10, 10, 150, 100);
+	CR_panel.setBounds(0, 0, 500, 300);
 	CR_panel.setLayout(null);
 	}
-	static void EFT(){
-		atm.setting.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent i54) {
-				eftsetting();
-			}
-		})
-		;
+	static void txPanel() {
+		CR_Tx_1.setLayout(null);
+		CR_Tx_1.setBackground(Color.DARK_GRAY);
+		CR_Tx_1.setBounds(130, 10, 220, 40);
+		CR_panel.add(CR_Tx_1);
+	}
+	static void txtLabel() {
+		CR_Txt.setText("Müşteri Kayıt Ekranı");
+		CR_Txt.setBounds(15, 0, 250, 40);
+		CR_Txt.setFont(new Font("",Font.CENTER_BASELINE,20));
+		CR_Txt.setForeground(Color.white);
+		CR_Tx_1.add(CR_Txt);
+	}
+	static void txPanel1(){
+		CR_Tx_2.setLayout(null);
+		CR_Tx_2.setBackground(Color.DARK_GRAY);
+		CR_Tx_2.setBounds(25,100,40,28);
+		CR_panel.add(CR_Tx_2);
+	}
+	static void txtLabel1() {
+		CR_Txt1.setText("İsim:");
+		CR_Txt1.setBounds(10, -2, 80, 30);
+		CR_Txt1.setFont(new Font("",Font.PLAIN,14));
+		CR_Txt1.setForeground(Color.white);
+		CR_Tx_2.add(CR_Txt1);
+	}
+	static void FnamePanel() {
+		CR_Tx_3.setBackground(Color.DARK_GRAY);
+		CR_Tx_3.setBounds(67, 100, 100, 28);
+		CR_panel.add(CR_Tx_3);
+	}
+	static void Fname() {
+		Fname.setBackground(new Color(90,90,90));
+		Fname.setForeground(Color.white);
+		Fname.setBorder(BorderFactory.createEmptyBorder(0,0,0,-22));
+		Fname.setFont(new Font("",Font.ROMAN_BASELINE,14));
+		CR_Tx_3.add(Fname);
+	}
+	static void txtPanel1() {
+		CR_Tx_4.setLayout(null);
+		CR_Tx_4.setBackground(Color.DARK_GRAY);
+		CR_Tx_4.setBounds(5, 130, 60, 28);
+		CR_panel.add(CR_Tx_4);
+	}
+	static void txtLabel2() {
+		CR_Txt2.setText("Soyisim:");
+		CR_Txt2.setBounds(5, -2, 80, 30);
+		CR_Txt2.setFont(new Font("",Font.PLAIN,14));
+		CR_Txt2.setForeground(Color.white);
+		CR_Tx_4.add(CR_Txt2);
+	}
+	static void txtPanel2() {
+		CR_Tx_5.setBackground(Color.DARK_GRAY);
+		CR_Tx_5.setBounds(67, 130, 100, 28);
+		CR_panel.add(CR_Tx_5);
+	}
+	static void FFname() { 
+		FFname.setBackground(new Color(90,90,90));
+		FFname.setForeground(Color.white);
+		FFname.setBorder(BorderFactory.createEmptyBorder(0,0,0,-22));
+		FFname.setFont(new Font("",Font.ROMAN_BASELINE,14));
+		CR_Tx_5.add(FFname);
+	}
+	static void addBlok() {
+		CustomerRegistration();
+		CustomerRegistrationLis();
+		txPanel();
+		txtLabel();
+	    txPanel1();
+	    txtLabel1();
+	    FnamePanel();
+	    Fname();
+	    txtPanel1();
+	    txtLabel2();
+	    txtPanel2();
+	    FFname();
+		CustomerRegistrationPage();
+	}
+	
 	}
 	
 	
-
-	
-	
-}
