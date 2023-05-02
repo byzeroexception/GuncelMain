@@ -2,13 +2,14 @@ package help;
 
 public class main {
 
-	public static void main(String [] args) {
-		ATM.LoginMenu();
+	public static <randomAccountNumber> void main(String [] args) {
+//		ATM.LoginMenu();
 		CustomerRegistration CR = new CustomerRegistration();
+		randomAccoundNumber   ac = new randomAccoundNumber();
+		
 		CusRegLog CRL = new CusRegLog();
 		CR.addBlok();
-		CRL.addblok();
-		
+	
 		
 		
 	}
