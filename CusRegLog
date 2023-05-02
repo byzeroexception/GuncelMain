@@ -1,0 +1,33 @@
+package help;
+
+public class CusRegLog {
+	public static String name;
+	public static String firstName;
+	public static String eMail;
+	public static String accountNum;
+	public static String password;
+	public static String passwordRec;
+
+	static void log() {
+	CustomerRegistration CR = new CustomerRegistration();
+		name        = CR.Fname.getText(); 
+		firstName   = CR.FFname.getText();
+		eMail       = CR.Fmail.getText();
+		accountNum  = CR.FAccNum.getText();
+		password    = CR.FPass.getText();
+		passwordRec = CR.FPassRec.getText();
+		
+		System.out.println(name);
+		System.out.println(firstName);
+		System.out.println(eMail);
+		System.out.println(accountNum);
+		System.out.println(password);
+		System.out.println(passwordRec);
+}
+
+	static void addblok() {
+		log();
+	
+	}
+	
+}
