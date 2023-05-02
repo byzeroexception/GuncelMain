@@ -4,11 +4,13 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.concurrent.ThreadLocalRandom;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
@@ -208,6 +210,8 @@ public class CustomerRegistration {
 		CR_panel.add(CR_Tx_9);
 	}
 	static void FAccNum() {
+		FAccNum.disable();
+		FAccNum.setText("Revize");
 		FAccNum.setBackground(new Color(90,90,90));
 		FAccNum.setForeground(Color.white);
 		FAccNum.setBorder(BorderFactory.createEmptyBorder(0,0,0,-22));
@@ -273,11 +277,31 @@ public class CustomerRegistration {
 		submit.setBounds(380, 220, 80, 20);
 		CR_panel.add(submit);
 	}
+	static void testIt2() {
+		if(FPass.getText().equals("") || FPassRec.equals("")  || Fname.getText().equals("") ||
+				   FFname.getText().equals("") ||
+				   Fmail.getText().equals("")) {
+			JOptionPane.showMessageDialog(null,
+					"Lütfen boş alanları doldurunuz."
+					,"MüşteriKayıt",
+					JOptionPane.WARNING_MESSAGE);
+		}
+		else if(FPass.getText().equalsIgnoreCase(FPassRec.getText())) {
+		System.out.println("Dogrulandi");
+		}else {
+			JOptionPane.showMessageDialog(null,
+					"Şifreler uyuşmuyor."
+					,"MüşteriKayıt",
+					JOptionPane.ERROR_MESSAGE);
+
+		}
+		
+		
+	}
 	static void submitLis() {
 		submit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ig242) {
-				CusRegLog.label();
-				CusRegLog.IfPasswordEqualsName();
+				testIt2();
 			}
 		});
 	}
@@ -332,11 +356,8 @@ public class CustomerRegistration {
 	    giveup();
 	    giveupLis();
 	    submitLis();
-	  
-	    CusRegLog.log();
-		
 
-//		CustomerRegistrationPage();
+		CustomerRegistrationPage();
 	}
 	
 	}
