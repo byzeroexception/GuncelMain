@@ -55,10 +55,10 @@ public static JPasswordField LPASS1 = new JPasswordField(10);
 //area A0V4D
 public static JButton SUBMİT = new JButton();
 
-public static String[] login = {"7523","0101","2023","0001"};
+public static String[] login = {"7523","0101","2023","0001",loginInfo.donustur};
 
 
-public static String GG = "1024";
+public static String[] GG ={"1024",loginInfo.sifre};
 
 
 static void timeOut() {
@@ -183,8 +183,8 @@ static void testIt() {
 	if(CusNum.equals(login[0])||
 	   CusNum.equals(login[1])||
 	   CusNum.equals(login[2])||
-	   CusNum.equals(login[3])&& 
-	   Pass.equals(GG)) {
+	   CusNum.equals(login[3])||
+	   Pass.equals(GG[0])) {
 		
 		/**********************************************
 		 *              Setting for testIt            *
@@ -414,7 +414,8 @@ static void current_sessionIdCustomer() {
 	if(a.equals(login[0])||
 	   a.equals(login[1])||
 	   a.equals(login[2])||
-	   a.equals(login[3])) {
+	   a.equals(login[3])||
+	   a.equals(login[4])){
 		current_sessionIdCustomer.setText(a);
 	}else {
 		current_sessionIdCustomer.setText("Admin");
