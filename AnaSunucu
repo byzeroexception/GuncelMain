@@ -1,12 +1,12 @@
-package help;
+package Uye_Kayıt;
 
 public class main {
 
 	public static <randomAccountNumber> void main(String [] args) {
 //		ATM.LoginMenu();
-		CustomerRegistration CR = new CustomerRegistration();
-		randomAccoundNumber   ac = new randomAccoundNumber();
 		
+
+		CustomerRegistration CR = new CustomerRegistration();
 		CusRegLog CRL = new CusRegLog();
 		CR.addBlok();
 	
