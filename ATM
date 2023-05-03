@@ -1,4 +1,4 @@
-package help;
+package Uye_Kayıt;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -55,10 +55,10 @@ public static JPasswordField LPASS1 = new JPasswordField(10);
 //area A0V4D
 public static JButton SUBMİT = new JButton();
 
-public static String[] login = {"7523","0101","2023","0001",loginInfo.donustur};
+public static String[] login = {"7523","0101","2023","0001"};
 
 
-public static String[] GG ={"1024",loginInfo.sifre};
+public static String[] GG ={"1024"};
 
 
 static void timeOut() {
