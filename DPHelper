@@ -1,0 +1,25 @@
+package Uye_Kayıt;
+
+import java.sql.*;
+
+
+
+public class DPHelper {
+	
+	static String name = "root";
+	static String password = "E10159980924e";
+	static String dbURL = "ojdbc:mysql://localhost:3306/kullanicilar";
+	
+	public Connection getConnection() throws SQLException {
+		return(Connection) DriverManager.getConnection(dbURL,name,password);
+	}
+	public void ShowError(SQLException exception) {
+		System.out.println("Error: " + exception.getMessage());
+		System.out.println("Error: " + exception.getErrorCode());
+	}
+	
+	
+	public static void main(String [] args) {
+		
+	}
+}
