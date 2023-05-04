@@ -1,4 +1,3 @@
-package help;
 
 public class CusRegLog {
 	public static String name;
