@@ -1,16 +1,15 @@
-package Uye_Kayıt;
 
 import java.sql.*;
 
 
 
-public class DPHelper {
+public class DBHelper {
 	
 	static String name = "root";
-	static String password = "E10159980924e";
-	static String dbURL = "ojdbc:mysql://localhost:3306/kullanicilar";
+	static String password = "e10159980924E";
+	static String dbURL = "jdbc:mysql://localhost:5157/kullanicilar";
 	
-	public Connection getConnection() throws SQLException {
+	static Connection getConnection() throws SQLException {
 		return(Connection) DriverManager.getConnection(dbURL,name,password);
 	}
 	public void ShowError(SQLException exception) {
@@ -18,8 +17,4 @@ public class DPHelper {
 		System.out.println("Error: " + exception.getErrorCode());
 	}
 	
-	
-	public static void main(String [] args) {
-		
-	}
 }
