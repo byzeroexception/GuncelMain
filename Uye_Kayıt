@@ -1,17 +1,16 @@
-package Uye_Kayıt;
 
 import java.sql.*;
 
-public class Uye_Kayıt {
+public class Uye_Kayit {
 
 	 static void Insert() {
 		CustomerRegistration CR = new CustomerRegistration();
 		Connection connection = null;
-		DPHelper dp = new DPHelper(); 
+		DBHelper dp = new DBHelper(); 
 		PreparedStatement statement = null;
 		try {
 			connection = dp.getConnection();
-			String sql = "insert into kullanicilar.bilgiler (Ad_Soyad,Email,Kullanici_Adi,Sifre)"
+			String sql = "insert into kullanicilar.bilgiler (ad,soyad,email,sifre)"
 					+ "values (?,?,?,?)";
 			statement = connection.prepareStatement(sql);
 			statement.setString(1,CR.FFname.getText());
@@ -20,17 +19,16 @@ public class Uye_Kayıt {
 			statement.setString(4,CR.FPass.getText());
 			
 		statement.executeUpdate();
-		System.out.println("Kayit basarisiz");
+		System.out.println("Kayit basarili");
 		}catch(SQLException e) {
 		System.err.println("Kayit basarisiz");
 		System.out.println(e);
 		}
 	}
 		static void add() {
-			DPHelper dp = new DPHelper();
+			DBHelper dp = new DBHelper();
 			Insert();
 		}
 	}
 
 	
-
