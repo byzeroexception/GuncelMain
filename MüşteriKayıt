@@ -1,4 +1,3 @@
-package Uye_Kayıt;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -302,7 +301,7 @@ public class CustomerRegistration {
 	static void submitLis() {
 		submit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ig242) {
-				Uye_Kayıt.add();
+				Uye_Kayit.add();
 				testIt2();
 			}
 		});
