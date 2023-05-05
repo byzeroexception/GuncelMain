@@ -1,3 +1,5 @@
+package helppp;
+
 
 import java.awt.Color;
 import java.awt.Font;
@@ -210,8 +212,8 @@ public class CustomerRegistration {
 		CR_panel.add(CR_Tx_9);
 	}
 	static void FAccNum() {
-		FAccNum.disable();
-		FAccNum.setText("Revize");
+//		FAccNum.disable();
+//		FAccNum.setText("Revize");
 		FAccNum.setBackground(new Color(90,90,90));
 		FAccNum.setForeground(Color.white);
 		FAccNum.setBorder(BorderFactory.createEmptyBorder(0,0,0,-22));
@@ -287,7 +289,9 @@ public class CustomerRegistration {
 					JOptionPane.WARNING_MESSAGE);
 		}
 		else if(FPass.getText().equalsIgnoreCase(FPassRec.getText())) {
-		System.out.println("Dogrulandi");
+		System.out.println("");
+		Uye_Kayit.add();
+
 		}else {
 			JOptionPane.showMessageDialog(null,
 					"Şifreler uyuşmuyor."
@@ -301,7 +305,6 @@ public class CustomerRegistration {
 	static void submitLis() {
 		submit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ig242) {
-				Uye_Kayit.add();
 				testIt2();
 			}
 		});
@@ -358,7 +361,7 @@ public class CustomerRegistration {
 	    giveupLis();
 	    submitLis();
 
-		CustomerRegistrationPage();
+//		CustomerRegistrationPage();
 	}
 	
 	}
