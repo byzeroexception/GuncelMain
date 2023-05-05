@@ -1,15 +1,19 @@
+package helppp;
+
 
 import java.sql.*;
 
 
 
-public class DBHelper {
+public class DBHelper {	
+	
+//	gets gt = new gets();
 	
 	static String name = "root";
 	static String password = "e10159980924E";
 	static String dbURL = "jdbc:mysql://localhost:5157/kullanicilar";
 	
-	static Connection getConnection() throws SQLException {
+	public Connection getConnection() throws SQLException {
 		return(Connection) DriverManager.getConnection(dbURL,name,password);
 	}
 	public void ShowError(SQLException exception) {
@@ -17,4 +21,8 @@ public class DBHelper {
 		System.out.println("Error: " + exception.getErrorCode());
 	}
 	
+	
+	public static void main(String [] args) {
+		
+	}
 }
