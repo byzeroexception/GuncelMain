@@ -1,0 +1,28 @@
+package helppp;
+
+import java.awt.Canvas;
+import java.beans.Statement;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class gets {
+
+	 public static Connection c;
+	 Connection connection = null;
+		static DBHelper dp = new DBHelper(); 
+	
+	static void ad() throws SQLException, ClassNotFoundException {
+		Class.forName("com.mysql.cj.jdbc.Driver");  
+		c = dp.getConnection();
+        c=DriverManager.getConnection("jdbc:mysql://localhost:5157/kullanicilar","root","e10159980924E");  
+   
+	System.out.println("Java SQL'e Baglandi");
+	}		
+	
+	static void err(SQLException i){
+		System.out.println("Baglanamadi");
+	}
+
+}
