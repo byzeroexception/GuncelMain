@@ -1,12 +1,15 @@
-package Uye_Kayıt;
+package helppp;
+
 
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
-import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.net.URL;
+import java.beans.Statement;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -54,11 +57,6 @@ public static JPasswordField LPASS1 = new JPasswordField(10);
 
 //area A0V4D
 public static JButton SUBMİT = new JButton();
-
-public static String[] login = {"7523","0101","2023","0001"};
-
-
-public static String[] GG ={"1024"};
 
 
 static void timeOut() {
@@ -168,8 +166,16 @@ static void Submit() {
 static void actionevent() { 
 	SUBMİT.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent i754L) {
+			
+			
 			timeOut();
-			testIt();
+			try {
+				testIt();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
 		}
 	});
 }
@@ -177,31 +183,42 @@ static void actionevent() {
 
 
 
-static void testIt() {
-	String CusNum = LNAME1.getText();
-	String Pass   = LPASS1.getText();
-	if(CusNum.equals(login[0])||
-	   CusNum.equals(login[1])||
-	   CusNum.equals(login[2])||
-	   CusNum.equals(login[3])||
-	   Pass.equals(GG[0])) {
-		
-		/**********************************************
-		 *              Setting for testIt            *
-		 * ------------------------------------------ *
-		 * LOGİNMENU and LoginPage  show New Settings *
-		 **********************************************/
-		LOGİNMENU.dispose();
-	current_sessionMenu();
+
+static void testIt() throws SQLException {
+	DBHelper dp = new DBHelper();
+	Connection c = dp.getConnection() ;	
+	java.sql.Statement st = c.createStatement();
 	
-	}
-	else if(CusNum.equals("") || Pass.equals("")) {
-		JOptionPane.showMessageDialog(null,"Müşteri Numarası ve Şifre alanı boş bırakılamaz","[Sistem][PARABANK]",JOptionPane.YES_OPTION);
-	}
-	else {
-		JOptionPane.showMessageDialog(null,"Üzgünüz giriş bilgileriniz yanlış","[Sistem][PARABANK]",JOptionPane.YES_OPTION);
-	}
 	
+	ResultSet rs =  st.executeQuery("select * from kullanicilar.bilgiler");
+//	if(LNAME1.getText().equals(rs.getString("HesapNumarasi"))&& LPASS1.getText().equals(rs.getString("Sifre"))) {
+//		System.out.println("SQL ATM'ye Baglandi");
+//	}
+//	else {
+//		System.err.println("SQL ATM'ye Baglanamadi: giris bilgileri yanlis");
+//	}
+	try{
+        while(rs.next())  
+        	if(LNAME1.getText().equals(rs.getString("HesapNumarasi"))&& 
+        			  LPASS1.getText().equals(rs.getString("Sifre"))) {
+        				
+        				/**********************************************
+        				 *              Setting for testIt            *
+        				 * ------------------------------------------ *
+        				 * LOGİNMENU and LoginPage  show New Settings *
+        				 **********************************************/
+        				LOGİNMENU.dispose();
+        			current_sessionMenu();
+        			
+        			}
+	
+        	else	if(LNAME1.getText().equals("") || LPASS1.getText().equals("")) {
+        				JOptionPane.showMessageDialog(null,"Müşteri Numarası ve Şifre alanı boş bırakılamaz","[Sistem][PARABANK]",JOptionPane.YES_OPTION);
+        			}
+        			else {
+        				JOptionPane.showMessageDialog(null,"Üzgünüz giriş bilgileriniz yanlış","[Sistem][PARABANK]",JOptionPane.YES_OPTION);
+        			}
+    }catch(Exception e){ System.err.println("SQL ATM'ye Baglanamadi");}
 }
 
 //area PR3LX
@@ -334,7 +351,6 @@ public static JLabel current_sessionIdCustomer = new JLabel();
 	
 	public static String tr;
 	public static String te;
-	public static String a;
 
 	
 	
@@ -346,7 +362,7 @@ static void sessionPanelMain() {
 }
 
 //area P2FF3
-static void current_sessionMenu() {
+static void current_sessionMenu() throws SQLException {
 	Dimension dimension;
 	current_sessionMenu.setTitle("SessionPage/OturumSayfası");
 //	URL url = ATM.class.getResource("/Icon.png");
@@ -408,19 +424,20 @@ static void current_sessionIdCustomerUI() {
 }
 
 // arae P2FF5
-static void current_sessionIdCustomer() {
+static void current_sessionIdCustomer() throws SQLException {
+	DBHelper dp = new DBHelper();
+	Connection c = dp.getConnection() ;	
+	java.sql.Statement st = c.createStatement();
 	
-	a = LNAME1.getText();
-	if(a.equals(login[0])||
-	   a.equals(login[1])||
-	   a.equals(login[2])||
-	   a.equals(login[3])||
-	   a.equals(login[4])){
-		current_sessionIdCustomer.setText(a);
-	}else {
+	
+	ResultSet rs =  st.executeQuery("select * from kullanicilar.bilgiler");
+
+	if(LNAME1.getText().equals(rs.getString("HesapNumarasi"))){
+		current_sessionIdCustomer.setText(rs.getString("HesapNumarasi"));
+	}
 		current_sessionIdCustomer.setText("Admin");
 
-	}
+	
 	
 	current_sessionIdCustomer.setForeground(new Color(232,232,232));
 //	current_sessionIdCustomer.setBounds(1,1,70,50);
@@ -457,7 +474,7 @@ static void withdrawmoneyLis() {
 				JOptionPane.showMessageDialog(null,"tek seferde 1000 ve altı para çekiniz","ParaÇekmeHata",JOptionPane.ERROR_MESSAGE);
 			}
 			else {
-				cc.setText("("+a+")"+"  -"+output+"  Çekildi.");
+				cc.setText(("null")+"  -"+output+"  Çekildi.");
 				cc.setBorder(BorderFactory.createEmptyBorder(0,0,0,40));
 				h.add(cc);
 				balance -=output;
@@ -510,7 +527,7 @@ static void paysLis() {
 				}
 				else {
 					
-					cc.setText("("+a+")"+"  +"+input+"  Yatırıldı.");
+					cc.setText("("+("null")+")"+"  +"+input+"  Yatırıldı.");
 					cc.setBorder(BorderFactory.createEmptyBorder(0,0,0,40));
 					h.add(cc);
 					balance +=input;
@@ -604,7 +621,7 @@ static void AccoundHis() {
 	
 }
 //area P2FF0
-static void addBlok_current_session() {
+static void addBlok_current_session() throws SQLException {
 
 sessionPanelMain.add(current_sessionCheckOut);
 		current_sessionCheckOut();
@@ -620,7 +637,8 @@ current_sessionMenu.add(sessionPanelMain);
 		sessionPanelMain();
 
 current_sessionMenu.add(current_sessionIdCustomerUI);
-		current_sessionIdCustomer();
+//current_sessionIdCustomer();
+
 
 current_sessionIdCustomerUI.add(current_sessionIdCustomer);
 		current_sessionIdCustomerUI();
@@ -654,8 +672,8 @@ sessionPanelMain.add(h);
 AccoundHis();
 		
 }
-static void testBlok() {
-	
+static void testBlok() throws SQLException {
+	current_sessionMenu();
 }
 
 }
