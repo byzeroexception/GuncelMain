@@ -1,34 +1,28 @@
 package helppp;
 
 
-public class CusRegLog {
-	public static String name;
-	public static String firstName;
-	public static String eMail;
-	public static String accountNum;
-	public static String password;
-	public static String passwordRec;
+import java.sql.*;
 
-	static void log() {
-	CustomerRegistration CR = new CustomerRegistration();
-		name        = CR.Fname.getText(); 
-		firstName   = CR.FFname.getText();
-		eMail       = CR.Fmail.getText();
-		accountNum  = CR.FAccNum.getText();
-		password    = CR.FPass.getText();
-		passwordRec = CR.FPassRec.getText();
-		
-		System.out.println(name);
-		System.out.println(firstName);
-		System.out.println(eMail);
-		System.out.println(accountNum);
-		System.out.println(password);
-		System.out.println(passwordRec);
-}
 
-	static void addblok() {
-		log();
+
+public class DBHelper {	
 	
+//	gets gt = new gets();
+	
+	static String name = "root";
+	static String password = "e10159980924E";
+	static String dbURL = "jdbc:mysql://localhost:5157/kullanicilar";
+	
+	public Connection getConnection() throws SQLException {
+		return(Connection) DriverManager.getConnection(dbURL,name,password);
+	}
+	public void ShowError(SQLException exception) {
+		System.out.println("Error: " + exception.getMessage());
+		System.out.println("Error: " + exception.getErrorCode());
 	}
 	
+	
+	public static void main(String [] args) {
+		
+	}
 }
