@@ -1,4 +1,4 @@
-package helppp;
+package help;
 
 import java.awt.Canvas;
 import java.beans.Statement;
@@ -17,8 +17,13 @@ public class gets {
 		Class.forName("com.mysql.cj.jdbc.Driver");  
 		c = dp.getConnection();
         c=DriverManager.getConnection("jdbc:mysql://localhost:5157/kullanicilar","root","e10159980924E");  
-   
-	System.out.println("Java SQL'e Baglandi");
+       try {
+		Thread.sleep(1000);
+	} catch (InterruptedException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	System.out.println("Java SQL'e Baglandi: giris icin hazir");
 	}		
 	
 	static void err(SQLException i){
