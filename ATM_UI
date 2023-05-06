@@ -209,7 +209,9 @@ static void testIt() throws SQLException {
 //		System.err.println("SQL ATM'ye Baglanamadi: giris bilgileri yanlis");
 //	}
 	try{
-        while(rs.next()) {
+        while(rs.next())
+        
+        {
         	if(LNAME1.getText().equalsIgnoreCase(rs.getString("HesapNumarasi"))&&
         			  LPASS1.getText().equalsIgnoreCase(rs.getString("sifre"))) {
         				
@@ -227,9 +229,9 @@ static void testIt() throws SQLException {
         	 if(LNAME1.getText().equals("") || LPASS1.getText().equals("")) {
         				JOptionPane.showMessageDialog(null,"Müşteri Numarası ve Şifre alanı boş bırakılamaz","[Sistem][PARABANK]",JOptionPane.YES_OPTION);
         			}
-        		else if(LNAME1.getText() != LPASS1.getText()) {
-    				JOptionPane.showMessageDialog(null,"Giriş bilgileri yanlış lütfen tekrar deneyin","[Sistem][PARABANK]",JOptionPane.YES_OPTION);
-        		}
+        	 else  if(LNAME1.getText().equals(LPASS1.getText())) {
+ 				JOptionPane.showMessageDialog(null,"Giriş bilgileri yanlış lütfen tekrar deneyin","[Sistem][PARABANK]",JOptionPane.YES_OPTION);
+     		}
         	
         
     }catch(Exception e){ System.err.println("SQL ATM'ye Baglanamadi");}
