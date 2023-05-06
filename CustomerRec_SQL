@@ -21,7 +21,8 @@ public class Uye_Kayit {
 			statement.setString(5,CR.FPass.getText());
 			
 		statement.executeUpdate();
-		System.out.println("Kayit basarili");
+		System.out.println("Kayit basarili: giris icin hazir");
+		CustomerRegistration.CR_frame.dispose();
 		}catch(SQLException e) {
 		System.err.println("Kayit basarisiz");
 		System.out.println(e);
