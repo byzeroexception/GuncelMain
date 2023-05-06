@@ -196,12 +196,12 @@ static void actionevent() {
 
 
 static void testIt() throws SQLException {
-	DBHelper dp = new DBHelper();
-	Connection c = dp.getConnection() ;	
-	java.sql.Statement st = c.createStatement();
+	
+	c = dp.getConnection() ;	
+	st = c.createStatement();
 	
 	
-	ResultSet rs =  st.executeQuery("select * from kullanicilar.bilgiler");
+	 rs =  st.executeQuery("select * from kullanicilar.bilgiler");
 //	if(LNAME1.getText().equals(rs.getString("HesapNumarasi"))&& LPASS1.getText().equals(rs.getString("Sifre"))) {
 //		System.out.println("SQL ATM'ye Baglandi");
 //	}
@@ -211,7 +211,7 @@ static void testIt() throws SQLException {
 	try{
         while(rs.next()) {
         	if(LNAME1.getText().equalsIgnoreCase(rs.getString("HesapNumarasi"))&&
-        			  LPASS1.getText().equals(rs.getString("sifre"))) {
+        			  LPASS1.getText().equalsIgnoreCase(rs.getString("sifre"))) {
         				
         				/**********************************************
         				 *              Setting for testIt            *
@@ -223,15 +223,15 @@ static void testIt() throws SQLException {
         			
         			}	
         	
-        
-        else if(LNAME1.getText().equals("") || LPASS1.getText().equals("")) {
+        }
+        	 if(LNAME1.getText().equals("") || LPASS1.getText().equals("")) {
         				JOptionPane.showMessageDialog(null,"Müşteri Numarası ve Şifre alanı boş bırakılamaz","[Sistem][PARABANK]",JOptionPane.YES_OPTION);
         			}
         		else if(LNAME1.getText() != LPASS1.getText()) {
     				JOptionPane.showMessageDialog(null,"Giriş bilgileri yanlış lütfen tekrar deneyin","[Sistem][PARABANK]",JOptionPane.YES_OPTION);
         		}
         	
-        }
+        
     }catch(Exception e){ System.err.println("SQL ATM'ye Baglanamadi");}
 }
 
@@ -621,13 +621,8 @@ static void profileSet() {
 static void profileSetList() {
 	profileSet.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent d222) {
-//			JOptionPane.showMessageDialog(null,"Profili Düzenle işlemi şuanda hizmet dışıdır.","Sistem",JOptionPane.INFORMATION_MESSAGE);
-			try {
-				showProfile.addBlok();
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			JOptionPane.showMessageDialog(null,"Profili Düzenle işlemi şuanda hizmet dışıdır.","Sistem",JOptionPane.INFORMATION_MESSAGE);
+			
 		}
 	});
 }
