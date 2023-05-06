@@ -1,3 +1,4 @@
+package help;
 
 import java.sql.*;
 
@@ -10,13 +11,14 @@ public class Uye_Kayit {
 		PreparedStatement statement = null;
 		try {
 			connection = dp.getConnection();
-			String sql = "insert into kullanicilar.bilgiler (ad,soyad,email,sifre)"
-					+ "values (?,?,?,?)";
+			String sql = "insert into kullanicilar.bilgiler (ad,soyad,email,HesapNumarasi,sifre)"
+					+ "values (?,?,?,?,?)";
 			statement = connection.prepareStatement(sql);
-			statement.setString(1,CR.FFname.getText());
-			statement.setString(2,CR.Fmail.getText());
-			statement.setString(3,CR.FFname.getText());
-			statement.setString(4,CR.FPass.getText());
+			statement.setString(1,CR.Fname.getText());
+			statement.setString(2,CR.FFname.getText());
+			statement.setString(3,CR.Fmail.getText());
+			statement.setString(4,CR.FAccNum.getText());
+			statement.setString(5,CR.FPass.getText());
 			
 		statement.executeUpdate();
 		System.out.println("Kayit basarili");
