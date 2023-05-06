@@ -1,4 +1,4 @@
-package helppp;
+package help;
 
 
 import java.awt.Color;
@@ -28,8 +28,8 @@ public class ATM {
 	public static JButton CR = new JButton(); 
 	
 public static JFrame LOGİNMENU = new JFrame(); 
-// public static JFrame PAGENAME = new JFrame(); 
-// public static JFrame PAGENAME2 = new JFrame();
+// public static JFrame PPAGENAME2AGENAME = new JFrame(); 
+// public static JFrame  = new JFrame();
 
 //area A00C2
 //public static JPanel Page1     = new JPanel();
@@ -58,6 +58,17 @@ public static JPasswordField LPASS1 = new JPasswordField(10);
 //area A0V4D
 public static JButton SUBMİT = new JButton();
 
+public static DBHelper dp = new DBHelper();
+public static Connection c ;	
+public static java.sql.Statement st;
+public static ResultSet rs;
+
+public ATM() throws SQLException {
+	dp.getConnection();
+	st = c.createStatement();
+	 rs =  st.executeQuery("select * from kullanicilar.bilgiler");
+	
+}
 
 static void timeOut() {
 	try {
@@ -198,9 +209,9 @@ static void testIt() throws SQLException {
 //		System.err.println("SQL ATM'ye Baglanamadi: giris bilgileri yanlis");
 //	}
 	try{
-        while(rs.next())  
-        	if(LNAME1.getText().equals(rs.getString("HesapNumarasi"))&& 
-        			  LPASS1.getText().equals(rs.getString("Sifre"))) {
+        while(rs.next()) {
+        	if(LNAME1.getText().equalsIgnoreCase(rs.getString("HesapNumarasi"))&&
+        			  LPASS1.getText().equals(rs.getString("sifre"))) {
         				
         				/**********************************************
         				 *              Setting for testIt            *
@@ -210,14 +221,14 @@ static void testIt() throws SQLException {
         				LOGİNMENU.dispose();
         			current_sessionMenu();
         			
-        			}
-	
-        	else	if(LNAME1.getText().equals("") || LPASS1.getText().equals("")) {
+        			}	
+        	
+        }
+        		if(LNAME1.getText().equals("") || LPASS1.getText().equals("")) {
         				JOptionPane.showMessageDialog(null,"Müşteri Numarası ve Şifre alanı boş bırakılamaz","[Sistem][PARABANK]",JOptionPane.YES_OPTION);
         			}
-        			else {
-        				JOptionPane.showMessageDialog(null,"Üzgünüz giriş bilgileriniz yanlış","[Sistem][PARABANK]",JOptionPane.YES_OPTION);
-        			}
+        	
+       
     }catch(Exception e){ System.err.println("SQL ATM'ye Baglanamadi");}
 }
 
@@ -425,18 +436,12 @@ static void current_sessionIdCustomerUI() {
 
 // arae P2FF5
 static void current_sessionIdCustomer() throws SQLException {
-	DBHelper dp = new DBHelper();
-	Connection c = dp.getConnection() ;	
-	java.sql.Statement st = c.createStatement();
 	
 	
-	ResultSet rs =  st.executeQuery("select * from kullanicilar.bilgiler");
+		current_sessionIdCustomer.setText(LNAME1.getText());
 
-	if(LNAME1.getText().equals(rs.getString("HesapNumarasi"))){
-		current_sessionIdCustomer.setText(rs.getString("HesapNumarasi"));
-	}
-		current_sessionIdCustomer.setText("Admin");
-
+//		current_sessionIdCustomer.setText("Admin");
+	
 	
 	
 	current_sessionIdCustomer.setForeground(new Color(232,232,232));
@@ -474,7 +479,7 @@ static void withdrawmoneyLis() {
 				JOptionPane.showMessageDialog(null,"tek seferde 1000 ve altı para çekiniz","ParaÇekmeHata",JOptionPane.ERROR_MESSAGE);
 			}
 			else {
-				cc.setText(("null")+"  -"+output+"  Çekildi.");
+				cc.setText("("+("null")+")"+"  -"+output+"  Çekildi.");
 				cc.setBorder(BorderFactory.createEmptyBorder(0,0,0,40));
 				h.add(cc);
 				balance -=output;
@@ -637,12 +642,16 @@ current_sessionMenu.add(sessionPanelMain);
 		sessionPanelMain();
 
 current_sessionMenu.add(current_sessionIdCustomerUI);
-//current_sessionIdCustomer();
-
 
 current_sessionIdCustomerUI.add(current_sessionIdCustomer);
 		current_sessionIdCustomerUI();
- 
+		
+		
+		
+		current_sessionIdCustomer();
+		
+		
+		
 sessionPanelMain.add(current_sessionIdCustomerUI);
  	
 sessionPanelMain.add(withdrawmoneySub);
