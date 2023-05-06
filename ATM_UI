@@ -223,12 +223,15 @@ static void testIt() throws SQLException {
         			
         			}	
         	
-        }
-        		if(LNAME1.getText().equals("") || LPASS1.getText().equals("")) {
+        
+        else if(LNAME1.getText().equals("") || LPASS1.getText().equals("")) {
         				JOptionPane.showMessageDialog(null,"Müşteri Numarası ve Şifre alanı boş bırakılamaz","[Sistem][PARABANK]",JOptionPane.YES_OPTION);
         			}
+        		else if(LNAME1.getText() != LPASS1.getText()) {
+    				JOptionPane.showMessageDialog(null,"Giriş bilgileri yanlış lütfen tekrar deneyin","[Sistem][PARABANK]",JOptionPane.YES_OPTION);
+        		}
         	
-       
+        }
     }catch(Exception e){ System.err.println("SQL ATM'ye Baglanamadi");}
 }
 
@@ -479,7 +482,7 @@ static void withdrawmoneyLis() {
 				JOptionPane.showMessageDialog(null,"tek seferde 1000 ve altı para çekiniz","ParaÇekmeHata",JOptionPane.ERROR_MESSAGE);
 			}
 			else {
-				cc.setText("("+("null")+")"+"  -"+output+"  Çekildi.");
+				cc.setText("("+(LNAME1.getText())+")"+"  -"+output+"  Çekildi.");
 				cc.setBorder(BorderFactory.createEmptyBorder(0,0,0,40));
 				h.add(cc);
 				balance -=output;
@@ -532,7 +535,7 @@ static void paysLis() {
 				}
 				else {
 					
-					cc.setText("("+("null")+")"+"  +"+input+"  Yatırıldı.");
+					cc.setText("("+(LNAME1.getText())+")"+"  +"+input+"  Yatırıldı.");
 					cc.setBorder(BorderFactory.createEmptyBorder(0,0,0,40));
 					h.add(cc);
 					balance +=input;
