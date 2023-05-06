@@ -8,7 +8,7 @@ public class main {
 
 	public static <randomAccountNumber> void main(String [] args) throws ClassNotFoundException, SQLException {
 	
-		System.out.println("system messages\n--------------------");
+		System.err.println("system messages\n----------------");
 		
 		ATM.LoginMenu();
 		
