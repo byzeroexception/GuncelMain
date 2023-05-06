@@ -621,7 +621,13 @@ static void profileSet() {
 static void profileSetList() {
 	profileSet.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent d222) {
-			JOptionPane.showMessageDialog(null,"Profili Düzenle işlemi şuanda hizmet dışıdır.","Sistem",JOptionPane.INFORMATION_MESSAGE);
+//			JOptionPane.showMessageDialog(null,"Profili Düzenle işlemi şuanda hizmet dışıdır.","Sistem",JOptionPane.INFORMATION_MESSAGE);
+			try {
+				showProfile.addBlok();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 	});
 }
