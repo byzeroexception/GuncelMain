@@ -1,0 +1,360 @@
+package help;
+
+import java.awt.Color;
+import java.awt.Font;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
+public class showProfile {
+	static DBHelper dp = new DBHelper();
+public static Connection c;	
+public static Statement stmt;
+public static  ResultSet rs;
+static void eklenti() throws SQLException {
+		 
+	
+}
+	
+	
+	public static JFrame CR_frame = new JFrame();
+	public static JPanel CR_panel = new JPanel();
+	public static JButton CR_button = new JButton();
+	public static JPanel CR_Tx_1 = new JPanel();
+	public static JLabel CR_Txt = new JLabel();
+	
+	public static JPanel CR_Tx_2 = new JPanel();
+	public static JLabel CR_Txt1 = new JLabel();
+
+	public static JPanel CR_Tx_3 = new JPanel();
+	public static JTextField Fname = new JTextField(10);
+	
+	public static JPanel CR_Tx_4 = new JPanel();
+	public static JLabel CR_Txt2 = new JLabel();
+	
+	public static JPanel CR_Tx_5 = new JPanel();
+	public static JTextField FFname = new JTextField(10);
+	
+	public static JPanel CR_Tx_6 = new JPanel();
+	public static JLabel CR_Txt_3 = new JLabel();
+	
+	public static JPanel CR_Tx_7 = new JPanel();
+	public static JTextField Fmail = new JTextField(10);
+	
+	public static JPanel CR_Tx_8 = new JPanel();
+	public static JLabel CR_Txt_4 = new JLabel();
+	
+	public static JPanel CR_Tx_9 = new JPanel();
+	public static JTextField FAccNum = new JTextField(10);
+	
+	public static JPanel CR_Tx_10 = new JPanel();
+	public static JLabel CR_Txt_5 = new JLabel();
+	
+	public static JPanel CR_Tx_11 = new JPanel();
+	public static JPasswordField FPass = new JPasswordField(10);
+	
+	public static JPanel CR_Tx_12 = new JPanel();
+	public static JLabel CR_Txt_6 = new JLabel();
+	
+	public static JPanel CR_Tx_13 = new JPanel();
+	public static JPasswordField FPassRec = new JPasswordField(10);
+	
+	public static JButton submit = new JButton();
+	public static JButton giveup = new JButton();
+	
+	static void timeout() {
+		try {Thread.sleep(500);
+		}catch(Exception c) {}
+	}
+	
+		
+	 
+	static void CustomerRegistrationPage() {
+	CR_frame.setTitle("ATM/ProfiliDüzenle");	
+	CR_frame.setLayout(null);
+	CR_frame.getContentPane().setBackground(Color.black);
+	CR_frame.setSize(500,300);
+	CR_frame.setLocation(600,350);
+	CR_frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	CR_frame.setVisible(true);
+	CR_frame.setResizable(false);
+	CR_frame.add(CR_panel);
+	
+	
+	//CR_panel_SETTİNG
+	
+	CR_panel.setBackground(Color.DARK_GRAY);
+	CR_panel.setBounds(0, 0, 500, 300);
+	CR_panel.setLayout(null);
+	}
+	static void txPanel() {
+		CR_Tx_1.setLayout(null);
+		CR_Tx_1.setBackground(Color.DARK_GRAY);
+		CR_Tx_1.setBounds(130, 10, 220, 40);
+		CR_panel.add(CR_Tx_1);
+	}
+	static void txtLabel() {
+		CR_Txt.setText("Profili Düzenle");
+		CR_Txt.setBounds(50, 0, 250, 40);
+		CR_Txt.setFont(new Font("",Font.CENTER_BASELINE,20));
+		CR_Txt.setForeground(Color.white);
+		CR_Tx_1.add(CR_Txt);
+	}
+	
+	
+	
+	static void txPanel1(){
+		CR_Tx_2.setLayout(null);
+		CR_Tx_2.setBackground(Color.DARK_GRAY);
+		CR_Tx_2.setBounds(5,80,60,28);
+		CR_panel.add(CR_Tx_2);
+	}
+	static void txtLabel1() {
+		CR_Txt1.setText("İsim:");
+		CR_Txt1.setBounds(28, -2, 80, 30);
+		CR_Txt1.setFont(new Font("",Font.PLAIN,14));
+		CR_Txt1.setForeground(Color.white);
+		CR_Tx_2.add(CR_Txt1);
+	}
+	static void FnamePanel() {
+		CR_Tx_3.setBackground(Color.DARK_GRAY);
+		CR_Tx_3.setBounds(67, 80, 100, 28);
+		CR_panel.add(CR_Tx_3);
+	}
+	static void Fname() throws SQLException {
+		Fname.disable();
+		c = dp.getConnection();	
+		stmt=c.createStatement();  
+		rs=stmt.executeQuery("select * from kullanicilar.bilgiler");
+		while(rs.next()) {
+			if(ATM.LNAME1.getText().equals(rs.next())) {
+			
+//			}else{	FFname.setText(rs.getString(rs.getType()));
+				}
+			}
+		Fname.setBackground(new Color(90,90,90));
+		Fname.setForeground(Color.white);
+		Fname.setBorder(BorderFactory.createEmptyBorder(0,0,0,-22));
+		Fname.setFont(new Font("",Font.ROMAN_BASELINE,14));
+		CR_Tx_3.add(Fname);
+	}
+	
+	
+	
+	static void txtPanel1() {
+		CR_Tx_4.setLayout(null);
+		CR_Tx_4.setBackground(Color.DARK_GRAY);
+		CR_Tx_4.setBounds(5, 110, 60, 28);
+		CR_panel.add(CR_Tx_4);
+	}
+	static void txtLabel2() {
+		CR_Txt2.setText("Soyisim:");
+		CR_Txt2.setBounds(5, -2, 80, 30);
+		CR_Txt2.setFont(new Font("",Font.PLAIN,14));
+		CR_Txt2.setForeground(Color.white);
+		CR_Tx_4.add(CR_Txt2);
+	}
+	static void txtPanel2() {
+		CR_Tx_5.setBackground(Color.DARK_GRAY);
+		CR_Tx_5.setBounds(67, 110, 100, 28);
+		CR_panel.add(CR_Tx_5);
+	}
+	static void FFname() throws SQLException { 
+		FFname.disable();
+		c = dp.getConnection();	
+		stmt=c.createStatement();  
+		rs=stmt.executeQuery("select * from kullanicilar.bilgiler");
+		while(rs.next()) {
+			FFname.setText(rs.getString(3));}
+		FFname.setBackground(new Color(90,90,90));
+		FFname.setForeground(Color.white);
+		FFname.setBorder(BorderFactory.createEmptyBorder(0,0,0,-22));
+		FFname.setFont(new Font("",Font.ROMAN_BASELINE,14));
+		CR_Tx_5.add(FFname);
+	}
+	
+	
+	
+	static void txtPanel3() {
+		CR_Tx_6.setLayout(null);
+		CR_Tx_6.setBackground(Color.DARK_GRAY);
+		CR_Tx_6.setBounds(5, 140, 60, 28);
+		CR_panel.add(CR_Tx_6);
+	}
+	static void txtLabel3() {
+		CR_Txt_3.setText("e-posta:");
+		CR_Txt_3.setForeground(Color.white);
+		CR_Txt_3.setBounds(5, -2, 80, 30);
+		CR_Txt_3.setFont(new Font("",Font.PLAIN,14));
+		CR_Tx_6.add(CR_Txt_3);
+	}
+	static void txtPanel4() {
+		CR_Tx_7.setBackground(Color.DARK_GRAY);
+		CR_Tx_7.setBounds(67, 140, 100, 28);
+		CR_panel.add(CR_Tx_7);
+	}
+	static void Fmail() throws SQLException {
+		Fmail.disable();
+		c = dp.getConnection();	
+		stmt=c.createStatement();  
+		rs=stmt.executeQuery("select * from kullanicilar.bilgiler");
+		while(rs.next()) {
+			Fmail.setText(rs.getString(4));}
+		Fmail.setBackground(new Color(90,90,90));
+		Fmail.setForeground(Color.white);
+		Fmail.setBorder(BorderFactory.createEmptyBorder(0,0,0,-22));
+		Fmail.setFont(new Font("",Font.ROMAN_BASELINE,14));
+		CR_Tx_7.add(Fmail);
+	}
+	
+	
+	
+	static void txtPanel5() {
+		CR_Tx_8.setLayout(null);
+		CR_Tx_8.setBackground(Color.DARK_GRAY);
+		CR_Tx_8.setBounds(240,80,120,28);
+		CR_panel.add(CR_Tx_8);
+	}
+	static void txtLabel4() {
+		CR_Txt_4.setText("Hesap Numarası:");
+		CR_Txt_4.setForeground(Color.white);
+		CR_Txt_4.setBounds(10, -2, 111, 30);
+		CR_Txt_4.setFont(new Font("",Font.PLAIN,14));
+		CR_Tx_8.add(CR_Txt_4);
+	}
+	static void txtPanel6() {
+		CR_Tx_9.setBackground(Color.DARK_GRAY);
+		CR_Tx_9.setBounds(362,80,100,28);
+		CR_panel.add(CR_Tx_9);
+	}
+	static void FAccNum() throws SQLException {
+		FAccNum.disable();
+		c = dp.getConnection();	
+		stmt=c.createStatement();  
+		rs=stmt.executeQuery("select * from kullanicilar.bilgiler");
+		while(rs.next()) {
+			FAccNum.setText(ATM.LNAME1.getText());}
+		FAccNum.setBackground(new Color(90,90,90));
+		FAccNum.setForeground(Color.white);
+		FAccNum.setBorder(BorderFactory.createEmptyBorder(0,0,0,-22));
+		FAccNum.setFont(new Font("",Font.ROMAN_BASELINE,14));
+		CR_Tx_9.add(FAccNum);
+	}
+	
+	
+	static void txtPanel7() {
+		CR_Tx_10.setLayout(null);
+		CR_Tx_10.setBackground(Color.DARK_GRAY);
+		CR_Tx_10.setBounds(240,110,120,28);
+		CR_panel.add(CR_Tx_10);
+	}
+	static void txtLabel6() {
+		CR_Txt_5.setText("Şifre:");
+		CR_Txt_5.setForeground(Color.white);
+		CR_Txt_5.setBounds(83, -2, 111, 30);
+		CR_Txt_5.setFont(new Font("",Font.PLAIN,14));
+		CR_Tx_10.add(CR_Txt_5);
+	}
+	static void txtPanel8() {
+		CR_Tx_11.setBackground(Color.DARK_GRAY);
+		CR_Tx_11.setBounds(362,110,100,28);
+		CR_panel.add(CR_Tx_11);
+	}
+	
+	
+	
+	static void FPass() throws SQLException {
+		FPass.disable();
+		c = dp.getConnection();	
+		stmt=c.createStatement();  
+		rs=stmt.executeQuery("select * from kullanicilar.bilgiler");
+		while(rs.next()) {
+			FPass.setText(rs.getString(6));}
+		FPass.setBackground(new Color(90,90,90));
+		FPass.setForeground(Color.white);
+		FPass.setBorder(BorderFactory.createEmptyBorder(0,0,0,-22));
+		FPass.setFont(new Font("",Font.ROMAN_BASELINE,14));
+		CR_Tx_11.add(FPass);
+	}
+	
+	
+	
+	static void txtPanel9() {
+		CR_Tx_12.setLayout(null);
+		CR_Tx_12.setBackground(Color.DARK_GRAY);
+		CR_Tx_12.setBounds(240,140,120,28);
+		CR_panel.add(CR_Tx_12);
+	}
+	static void txtLabel7() {
+		CR_Txt_6.setText("Şifre tekrarı:");
+		CR_Txt_6.setForeground(Color.white);
+		CR_Txt_6.setBounds(40, -2, 111, 30);
+		CR_Txt_6.setFont(new Font("",Font.PLAIN,14));
+		CR_Tx_12.add(CR_Txt_6);	
+	}
+	static void txtPanel10() {
+		CR_Tx_13.setBackground(Color.DARK_GRAY);
+		CR_Tx_13.setBounds(362,140,100,28);
+		CR_panel.add(CR_Tx_13);
+	}
+	static void FPassRec() throws SQLException {
+		FPassRec.disable();
+		c = dp.getConnection();	
+		stmt=c.createStatement();  
+		rs=stmt.executeQuery("select * from kullanicilar.bilgiler id1");
+		while(rs.next()) {FPassRec.setText(rs.getString(6));}
+		FPassRec.setBackground(new Color(90,90,90));
+		FPassRec.setForeground(Color.white);
+		FPassRec.setBorder(BorderFactory.createEmptyBorder(0,0,0,-22));
+		FPassRec.setFont(new Font("",Font.ROMAN_BASELINE,14));
+		CR_Tx_13.add(FPassRec);
+	} 
+	static void addBlok() throws SQLException {
+	
+		
+		txPanel();
+		txtLabel();
+	    txPanel1();
+	    txtLabel1();
+	    FnamePanel();
+	    Fname();
+	    txtPanel1();
+	    txtLabel2();
+	    txtPanel2();
+	    FFname();
+	    txtPanel3();
+	    txtLabel3();
+	    Fmail();
+	    txtPanel4();
+	    txtPanel5();
+	    txtLabel4();
+	    txtPanel6();
+	    txtPanel7();
+	    FAccNum();
+	    txtLabel6();
+	    txtPanel8();
+	    txtPanel9();
+	    FPass();
+	    txtLabel7();
+	    FPassRec();
+	    txtPanel10();
+	    CustomerRegistrationPage();
+	    eklenti();
+
+//		CustomerRegistrationPage();
+	}
+	public static void main(String []args) throws SQLException {
+//		addBlok();
+		
+	}
+	
+}
