@@ -1,4 +1,4 @@
-package helppp;
+package help;
 
 
 import java.awt.Color;
@@ -18,7 +18,7 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 public class CustomerRegistration {
-	public static ATM atm = new ATM();
+	
 	
 	
 //    CR_frame_SETTİNG
@@ -77,15 +77,21 @@ public class CustomerRegistration {
 		CR_button.setBackground(Color.DARK_GRAY);
 		CR_button.setForeground(new Color(232,232,232));
 		CR_button.setBounds(245,170, 90, 20);
-		atm.LoginPage.add(CR_button);
+		ATM.LoginPage.add(CR_button);
 	}
 	static void CustomerRegistrationLis() {
+	
+			
 	CR_button.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent t343) {
-			atm.LOGİNMENU.dispose();
+			ATM.LOGİNMENU.dispose();
+			System.out.println("SQL Java'ya baglandi: kayit icin hazir");
+			
 			CustomerRegistrationPage();
 		}
 	});
+	
+		
 	}
 	static void CustomerRegistrationPage() {
 	CR_frame.setTitle("ATM/MüşteriKayıt");	
@@ -304,8 +310,8 @@ public class CustomerRegistration {
 	}
 	static void submitLis() {
 		submit.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent ig242) {
-				testIt2();
+			public void actionPerformed(ActionEvent ig242) {				
+				testIt2();	
 			}
 		});
 	}
@@ -321,7 +327,7 @@ public class CustomerRegistration {
 		giveup.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ig22) {
 				CR_frame.dispose();
-				atm.LoginMenu();
+				ATM.LoginMenu();
 			}
 		});
 	}
