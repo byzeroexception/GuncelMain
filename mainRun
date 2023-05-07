@@ -1,6 +1,4 @@
-package help;
-
-
+package helppp;
 
 import java.sql.SQLException;
 
@@ -21,5 +19,5 @@ public class main {
 		
 		gt.ad();
 //		ATM.testBlok
-	
+		
 	}}
