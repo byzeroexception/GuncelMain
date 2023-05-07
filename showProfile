@@ -1,4 +1,4 @@
-package help;
+package helppp;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -20,6 +20,10 @@ public class showProfile {
 public static Connection c;	
 public static Statement stmt;
 public static  ResultSet rs;
+public static  ResultSet rs1;
+public static  ResultSet rs2;
+public static  ResultSet rs3;
+
 static void eklenti() throws SQLException {
 		 
 	
@@ -134,12 +138,17 @@ static void eklenti() throws SQLException {
 		Fname.disable();
 		c = dp.getConnection();	
 		stmt=c.createStatement();  
-		rs=stmt.executeQuery("select * from kullanicilar.bilgiler");
-		while(rs.next()) {
-			if(ATM.LNAME1.getText().equals(rs.next())) {
+		rs1=stmt.executeQuery("select HesapNumarasi from kullanicilar.bilgiler");
+		
+		
+		while(rs1.next()) {
+			if(rs1.equals(ATM.LNAME1.getText())||ATM.LNAME1.equals("0000")){
+				Fname.setText(ATM.LNAME1.getText());
+			}
+			else {
+				Fname.setText("?");
+			}
 			
-//			}else{	FFname.setText(rs.getString(rs.getType()));
-				}
 			}
 		Fname.setBackground(new Color(90,90,90));
 		Fname.setForeground(Color.white);
@@ -172,9 +181,12 @@ static void eklenti() throws SQLException {
 		FFname.disable();
 		c = dp.getConnection();	
 		stmt=c.createStatement();  
-		rs=stmt.executeQuery("select * from kullanicilar.bilgiler");
-		while(rs.next()) {
-			FFname.setText(rs.getString(3));}
+		rs1=stmt.executeQuery("select * from kullanicilar.bilgiler");
+		while(rs1.next()) {
+			
+			}
+		
+		
 		FFname.setBackground(new Color(90,90,90));
 		FFname.setForeground(Color.white);
 		FFname.setBorder(BorderFactory.createEmptyBorder(0,0,0,-22));
@@ -353,7 +365,7 @@ static void eklenti() throws SQLException {
 //		CustomerRegistrationPage();
 	}
 	public static void main(String []args) throws SQLException {
-//		addBlok();
+		addBlok();
 		
 	}
 	
