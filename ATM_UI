@@ -1,3 +1,4 @@
+package helppp;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -372,7 +373,12 @@ static void current_sessionMenu() throws SQLException {
     current_sessionMenu.setLayout(null);
 	current_sessionMenu.getContentPane().setBackground(Color.DARK_GRAY);
 	current_sessionMenu.setSize(500,300);
-	current_sessionMenu.setLocation(600,350);
+	dimension = Toolkit.getDefaultToolkit().getScreenSize();
+	
+	int x = (int) ((dimension.getWidth() - current_sessionMenu.getWidth()) / 2);
+	int y = (int) ((dimension.getHeight() - current_sessionMenu.getHeight()) / 2);
+	
+	current_sessionMenu.setLocation(x,y);
 	current_sessionMenu.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 	current_sessionMenu.setResizable(false);
 	current_sessionMenu.setVisible(true);
