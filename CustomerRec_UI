@@ -1,7 +1,9 @@
 package helppp;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
@@ -97,7 +99,12 @@ public class CustomerRegistration {
 	CR_frame.setLayout(null);
 	CR_frame.getContentPane().setBackground(Color.black);
 	CR_frame.setSize(500,300);
-	CR_frame.setLocation(600,350);
+	Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
+	
+	int x = (int) ((dimension.getWidth() - CR_frame.getWidth()) / 2);
+	int y = (int) ((dimension.getHeight() - CR_frame.getHeight()) / 2);
+	
+	CR_frame.setLocation(x,y);
 	CR_frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	CR_frame.setVisible(true);
 	CR_frame.setResizable(false);
