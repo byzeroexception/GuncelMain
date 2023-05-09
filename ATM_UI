@@ -1,5 +1,3 @@
-package helppp;
-
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -199,7 +197,7 @@ static void testIt() throws SQLException {
 //	}
 	try{
         while(rs.next())        
-        {
+        { 
         	if(LNAME1.getText().equalsIgnoreCase(rs.getString("HesapNumarasi"))&&
         	   LPASS1.getText().equalsIgnoreCase(rs.getString("sifre"))) {
         				
