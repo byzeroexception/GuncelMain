@@ -24,14 +24,10 @@ public class ATM {
 
 	
 //exceptions
-	public static JButton CR = new JButton(); 
+public static JButton CR = new JButton(); 
 	
 public static JFrame LOGİNMENU = new JFrame(); 
-// public static JFrame PPAGENAME2AGENAME = new JFrame(); 
-// public static JFrame  = new JFrame();
-
 //area A00C2
-//public static JPanel Page1     = new JPanel();
 public static JPanel LoginPage = new JPanel();
 
 //area A00C3
@@ -591,6 +587,7 @@ static void settingList() {
 		}
 	});
 }
+
 static void payments() {
 	payments.setText("Ödemeler");
 	payments.setBackground(new Color(232,232,232));
@@ -605,6 +602,7 @@ static void paymentsList() {
 		}
 	});
 }
+
 static void profileSet() {
 	profileSet.setText("Profili Düzenle");
 	profileSet.setBackground(new Color(232,232,232));
@@ -625,40 +623,26 @@ static void profileSetList() {
 		}
 	});
 }
-static void AccoundHis() {
-	
-}
+
 //area P2FF0
 static void addBlok_current_session() throws SQLException {
 
 sessionPanelMain.add(current_sessionCheckOut);
 		current_sessionCheckOut();
 		current_sessionCheckOutLis();
-		
 sessionPanelMain.add(current_sessionBalanceUI);
 		current_sessionBalanceUI();
-
 current_sessionBalanceUI.add(current_sessionBalance);
 		current_sessionBalance();
-		
 current_sessionMenu.add(sessionPanelMain);
 		sessionPanelMain();
-
 current_sessionMenu.add(current_sessionIdCustomerUI);
-
 current_sessionIdCustomerUI.add(current_sessionIdCustomer);
 		current_sessionIdCustomerUI();
-		
-		
-		
 		current_sessionIdCustomer();
-		
-		
-		
 sessionPanelMain.add(current_sessionIdCustomerUI);
  	
 sessionPanelMain.add(withdrawmoneySub);
-	
 		withdrawmoney();
 		withdrawmoneyLis();
 		
@@ -680,12 +664,9 @@ sessionPanelMain.add(payments);
 sessionPanelMain.add(profileSet);
 		profileSet();
 		profileSetList();
-sessionPanelMain.add(h);
-AccoundHis();
-		
+sessionPanelMain.add(h);		
 }
 static void testBlok() throws SQLException {
 	current_sessionMenu();
-}
-
+	}
 }
