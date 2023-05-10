@@ -1,0 +1,23 @@
+	package helppp;
+	
+	import java.sql.SQLException;
+	
+	public class main {
+		public static <randomAccountNumber> void main(String [] args) throws ClassNotFoundException, SQLException {
+			CustomerRegistration CR = new CustomerRegistration(); //AtmMüşteriKayıt Ekranı UI
+			DBHelper db = new DBHelper(); // MySQL Giriş Bağlantısı
+			gets gt = new gets(); // MySQL Giriş Başarılı Bilgilendirmesi
+
+			/**********************************************
+			 *       Çağırılan Constructor/Metodlar       *
+			 * ------------------------------------------ *             
+			 *  ATM.LoginMenu();                          * 
+			 *  CR.addBlok()                              *
+			 *  gt.ad()    	            		      *
+			 **********************************************/
+			System.err.println("system messages\n----------------");
+				ATM.LoginMenu();
+				CR.addBlok();
+				gt.ad();
+		}
+}
