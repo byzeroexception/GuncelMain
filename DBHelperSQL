@@ -1,28 +1,16 @@
-
-
+package helppp;
 import java.sql.*;
-
-
-
 public class DBHelper {	
-	
-//	gets gt = new gets();
-	
+	gets gt = new gets();
 	static String name = "root";
 	static String password = "e10159980924E";
 	static String dbURL = "jdbc:mysql://localhost:5157/kullanicilar";
 	
 	public static Connection getConnection() throws SQLException {
-//		System.out.println("Java ile SQL'e giris yapildi");
 		return(Connection) DriverManager.getConnection(dbURL,name,password);
 	}
 	public void ShowError(SQLException exception) {
 		System.out.println("Error: " + exception.getMessage());
 		System.out.println("Error: " + exception.getErrorCode());
-	}
-	
-	
-	public static void main(String [] args) {
-		
 	}
 }
