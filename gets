@@ -8,11 +8,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class gets {
-
 	 public static Connection c;
+	 static DBHelper dp = new DBHelper(); 
 	 Connection connection = null;
-		static DBHelper dp = new DBHelper(); 
-	
 	static void ad() throws SQLException, ClassNotFoundException {
 		Class.forName("com.mysql.cj.jdbc.Driver");  
 		c = dp.getConnection();
@@ -25,9 +23,7 @@ public class gets {
 	}
 	System.out.println("Java SQL'e Baglandi: giris icin hazir");
 	}		
-	
 	static void err(SQLException i){
 		System.out.println("Baglanamadi");
 	}
-
 }
